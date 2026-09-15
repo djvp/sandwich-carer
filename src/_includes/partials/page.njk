@@ -1,0 +1,193 @@
+{% include "partials/sam-defs.njk" %}
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="{{ site.name }}, home">
+      <svg viewBox="0 0 300 244" aria-hidden="true"><use href="#samCalm"/></svg>
+      <b>the sandwich carer</b>
+    </a>
+    <ul class="nav-links">
+      <li class="hide-m"><a href="#breakdown">Breakdown</a></li>
+      <li class="hide-m"><a href="#guides">Guides</a></li>
+      <li class="hide-m"><a href="#about">About</a></li>
+      <li class="hide-s"><a href="{{ site.links.facebook or '#' }}" data-link="facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.4V14h2.8v8h3.3z"/></svg></a></li>
+      <li class="hide-s"><a href="{{ site.links.instagram or '#' }}" data-link="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+      <li><a class="cta" href="#subscribe">Subscribe</a></li>
+      {% if site.preview %}<li><span class="preview-pill" title="Links are not connected yet">PREVIEW</span></li>{% endif %}
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">NDIS · Aged care · Plain English</p>
+      <h1>Plain English for the carer in the middle.</h1>
+      <p class="lede">The Sandwich Carer translates the NDIS and aged care for participants, families, and the carers sandwiched between a complex system and the person they love. Independent, unaffiliated, occasionally funny.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#subscribe">Get the fortnightly breakdown <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-secondary" href="#guides">Browse the guides</a>
+      </div>
+      <p class="scope"><span class="tag tag-ndis">NDIS</span><span class="tag tag-aged">AGED CARE</span> Every post says which system it's about. One feed, both audiences.</p>
+    </div>
+    <div class="stage">
+      <div class="stage-bg" aria-hidden="true"></div>
+      <svg id="heroSam" class="hero-sam side" viewBox="0 0 300 244" role="img" aria-label="Sam, the sandwich mascot, side-eyeing a line of jargon">
+        <ellipse cx="150" cy="226" rx="104" ry="12" fill="#33291F" opacity=".13"/>
+        <use href="#samBody"/>
+        <rect class="browL" x="108" y="61" width="24" height="5.5" rx="2.75" fill="#2A211A"/>
+        <rect class="browR" x="168" y="61" width="24" height="5.5" rx="2.75" fill="#2A211A"/>
+        <ellipse cx="120" cy="84" rx="13" ry="14" fill="#FFF9EE"/>
+        <ellipse cx="180" cy="84" rx="13" ry="14" fill="#FFF9EE"/>
+        <clipPath id="eyeL"><ellipse cx="120" cy="84" rx="13" ry="14"/></clipPath>
+        <clipPath id="eyeR"><ellipse cx="180" cy="84" rx="13" ry="14"/></clipPath>
+        <g clip-path="url(#eyeL)"><g class="pupils"><circle cx="121" cy="85" r="6.5" fill="#2A211A"/><circle cx="124" cy="80" r="2.2" fill="#FFF9EE"/></g><rect x="104" y="68" width="32" height="34" fill="#F5E0B0" style="animation:samLid 5.2s ease-in-out infinite"/></g>
+        <g clip-path="url(#eyeR)"><g class="pupils"><circle cx="181" cy="85" r="6.5" fill="#2A211A"/><circle cx="184" cy="80" r="2.2" fill="#FFF9EE"/></g><rect x="164" y="68" width="32" height="34" fill="#F5E0B0" style="animation:samLid 5.2s ease-in-out infinite"/></g>
+        <ellipse cx="120" cy="84" rx="13" ry="14" fill="none" stroke="#2A211A" stroke-width="2.5"/>
+        <ellipse cx="180" cy="84" rx="13" ry="14" fill="none" stroke="#2A211A" stroke-width="2.5"/>
+        <path class="mouth m-smile" d="M136 106 q14 13 28 0" stroke="#2A211A" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+        <path class="mouth m-flat" d="M137 109 h26" stroke="#2A211A" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="card-translate">
+        <div class="stamp" aria-hidden="true">JARGON<br>REMOVED</div>
+        <p class="eyebrow">What they said</p>
+        <p style="margin-top:8px"><span class="jargon">"Participants and nominees are encouraged to familiarise themselves with the relevant operational guidelines prior to reassessment."</span></p>
+        <p class="t-label">WHAT IT MEANS</p>
+        <p class="t-text">Read up before your plan review. We'll show you which bits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="breakdown">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Every fortnight</p>
+        <h2>What the NDIS just said</h2>
+      </div>
+      <p class="note">The NDIS drops a newsletter every fortnight. Here's the 90-second version, with the bit they buried.</p>
+    </div>
+    <div class="breakdown">
+      <article class="bd-card">
+        <div class="top"><span class="tag tag-ndis">NDIS</span><span class="date">12 AUG · Nº14 <span class="tag tag-sample">SAMPLE</span></span></div>
+        <h3>The August newsletter, in 90 seconds.</h3>
+        <div class="lights">
+          <div class="light"><span class="tag" style="background:var(--useful)">USEFUL</span><div><b>Core funds now flex between support types.</b><span>No review needed to move money from one to the other. This is the one to act on.</span></div></div>
+          <div class="light"><span class="tag watch" style="background:var(--watch)">WATCH</span><div><b>Navigator pilot lands in October.</b><span>Nobody can say yet what a navigator actually does for you. We'll find out.</span></div></div>
+          <div class="light"><span class="tag" style="background:var(--buried)">BURIED</span><div><b>Therapy price limits frozen for a third year.</b><span>Page 14, under a heading nobody reads. Your therapist noticed.</span></div></div>
+        </div>
+        <div class="means">
+          <div><p class="eyebrow">What this means for you</p><p>If you're rationing one support to protect another, <b>you probably don't need to any more.</b> Check the flex before your next invoice.</p></div>
+          <div><p class="eyebrow">My take</p><p>Three years of frozen prices isn't a "review", it's a decision. Just say so.</p></div>
+        </div>
+        <div class="foot"><a href="{{ site.links.substack or '#' }}" data-link="substack">Read the full breakdown →</a><svg viewBox="0 0 300 244" width="60" height="49" aria-hidden="true"><use href="#samCalm"/></svg></div>
+      </article>
+      <article class="bd-card bd-aged">
+        <div class="top"><span class="tag tag-aged">AGED CARE</span><span class="date">SUPPORT AT HOME <span class="tag tag-sample">SAMPLE</span></span></div>
+        <p class="eyebrow">What they said</p>
+        <p class="q">"Support at Home participants may be subject to a co-contribution determined by means testing."</p>
+        <p class="t-label">WHAT IT MEANS</p>
+        <p class="t-text">You may have to chip in. How much depends on your income.</p>
+        <p class="mum">And what that means for Mum, in the full post.</p>
+        <div class="sam" aria-hidden="true"><svg viewBox="0 0 300 244"><use href="#samSide"/></svg></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">What you'll get</p>
+        <h2>Five kinds of post, and every acronym explained.</h2>
+      </div>
+      <p class="note">Two feed posts a week, two or three stories, and the fortnightly breakdown. Analogies over acronyms, every time.</p>
+    </div>
+    <div class="pillars">
+      {% for p in pillars %}
+      <div class="pillar {{ p.class }}"><h3>{{ p.name }}</h3><p>{{ p.blurb }}</p><span class="fmt">{{ p.format }}</span></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="guides" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Guides &amp; templates</p>
+        <h2>Guides you can print, scribble on and take to the meeting.</h2>
+      </div>
+      <p class="note">Downloadable PDFs, yours to keep. Prices shown are placeholders until the store is live.</p>
+    </div>
+    <div class="guides">
+      {% for g in guides %}
+      <article class="guide">
+        <div class="cover" style="background:{{ g.cover }}"><span class="tag {{ g.scopeClass }}">{{ g.scope }}</span><svg viewBox="0 0 160 200" aria-hidden="true"><use href="#guideDoc"/></svg></div>
+        <div class="body">
+          <h3>{{ g.title }}</h3>
+          <p>{{ g.blurb }}</p>
+          <div class="buy"><span class="price">{{ g.price }}{% if g.samplePrice %}<small>SAMPLE PRICE</small>{% endif %}</span><a class="btn btn-primary" href="{{ g.url or site.links.shop or '#' }}" data-link="shop">{{ g.cta }}</a></div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="subscribe" style="padding-top:0">
+  <div class="wrap">
+    <div class="subscribe">
+      <div>
+        <p class="eyebrow">The newsletter</p>
+        <h2>The breakdown, in your inbox, before the next meeting.</h2>
+        <p class="lede">Free every fortnight. Or {{ site.memberPrice }} a month for the deep-dive guides and templates as they drop, so you never buy one twice.</p>
+        <div class="tiers">
+          <div class="tier"><p class="k">FREE</p><p class="v">Fortnightly breakdown</p><p>What the NDIS and aged care just said, translated. The traffic lights. My take.</p></div>
+          <div class="tier"><p class="k">MEMBER</p><p class="v">{{ site.memberPrice }}<small>/ MONTH</small></p><p>Everything free, plus every deep-dive guide and template as it's released.</p></div>
+        </div>
+        <form class="form" id="subscribeForm" novalidate>
+          <label for="email" class="eyebrow">Your email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+          <button class="btn btn-bread" type="submit">Subscribe</button>
+          <p class="fine">No spam, no provider ads, unsubscribe in one click. Subscriptions run through Substack.</p>
+        </form>
+      </div>
+      <aside class="realtalk">
+        <p class="eyebrow">Real talk</p>
+        <blockquote>Nobody warns you the paperwork is the second job.</blockquote>
+        <p class="who">If you're doing the school run, the shopping for Dad and the plan review in the same week, this is for you. You're allowed to say it's a lot.</p>
+        <div class="sam" aria-hidden="true"><svg viewBox="0 0 300 244"><use href="#samOverIt"/></svg></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="indie" id="about">
+  <div class="wrap">
+    <div><h3>Independent.</h3><p>Written by a carer, not a provider. Nobody pays for a mention, and nobody gets to check the copy before it goes out.</p></div>
+    <div><h3>Unaffiliated.</h3><p>Not the NDIA, not a Support at Home provider, not a plan manager. We read what they publish and tell you what it means.</p></div>
+    <div><h3>Not advice.</h3><p>This is the plain-English version so you can ask better questions. It's not legal or financial advice, and it doesn't replace your planner, your GP or your lawyer.</p></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg viewBox="0 0 300 244" aria-hidden="true"><use href="#samCalm"/></svg><b>the sandwich carer</b></a>
+    <ul>
+      <li><a href="#breakdown">Breakdown</a></li>
+      <li><a href="#guides">Guides</a></li>
+      <li><a href="#subscribe">Subscribe</a></li>
+      <li><a href="{{ site.links.facebook or '#' }}" data-link="facebook">Facebook</a></li>
+      <li><a href="{{ site.links.instagram or '#' }}" data-link="instagram">Instagram</a></li>
+      <li><a href="{{ site.links.substack or '#' }}" data-link="substack">Substack</a></li>
+    </ul>
+    <p class="legal">© {{ site.year }} {{ site.name }}. An independent Australian publication. Not affiliated with the National Disability Insurance Agency, the Department of Health and Aged Care, or any provider. Nothing here is legal or financial advice. Sam the sandwich is ours; please don't put him on your brochure.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>

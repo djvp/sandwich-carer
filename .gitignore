@@ -1,0 +1,9 @@
+node_modules/
+_site/
+.DS_Store
+
+# local tooling and large exported design canvases (regenerate from Main.dc.html)
+.claude/
+.impeccable/
+core-design.html
+the-sandwich-carer-core-design-v2.html

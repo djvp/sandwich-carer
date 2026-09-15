@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Plan Review Prep Pack",
+    "scope": "NDIS",
+    "scopeClass": "tag-ndis",
+    "cover": "var(--bread)",
+    "blurb": "Seven pages that get you from \"the letter came\" to walking in ready. Evidence checklist, the three questions planners actually ask, and a script for the hard bit.",
+    "price": "A$19",
+    "samplePrice": true,
+    "cta": "Buy the pack",
+    "url": ""
+  },
+  {
+    "title": "My NDIS Goals Workbook",
+    "scope": "NDIS",
+    "scopeClass": "tag-ndis",
+    "cover": "var(--lettuce)",
+    "blurb": "Goals written the way the system funds them, in words that are still yours. Worked examples for kids, adults and people who hate writing goals.",
+    "price": "A$14",
+    "samplePrice": true,
+    "cta": "Buy the workbook",
+    "url": ""
+  },
+  {
+    "title": "Support at Home: the first 90 days",
+    "scope": "AGED CARE",
+    "scopeClass": "tag-both",
+    "cover": "var(--tomato)",
+    "blurb": "What happens after the assessment, who calls whom, and what you can push back on. For the adult child doing this from two suburbs away.",
+    "price": "A$19",
+    "samplePrice": true,
+    "cta": "Buy the guide",
+    "url": ""
+  }
+]

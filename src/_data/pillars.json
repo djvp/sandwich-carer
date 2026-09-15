@@ -1,0 +1,7 @@
+[
+  { "name": "What the NDIS just said", "blurb": "Newsletter and policy changes, translated fortnightly.", "format": "Carousel", "class": "p-news" },
+  { "name": "How to not stuff this up", "blurb": "Step-by-step guides to the moments that matter. Plan reviews. Appeals. Starting Support at Home.", "format": "Carousel · Reel", "class": "p-howto" },
+  { "name": "Hot take", "blurb": "An opinion on a policy, a decision or a trend. Signed.", "format": "Tile · Reel", "class": "p-hot" },
+  { "name": "Did you know?", "blurb": "The quick tips most people miss, in one tile.", "format": "Tile · Story", "class": "p-know" },
+  { "name": "Real talk", "blurb": "Caring, burnout, bureaucracy. The bits nobody puts in a brochure.", "format": "Caption-led", "class": "p-real" }
+]

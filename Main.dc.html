@@ -1,0 +1,509 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;family=Baloo+2:wght@500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#EFE9DC;font-family:'Atkinson Hyperlegible',system-ui,sans-serif;color:#33291F}
+a{color:#3E8E7E}a:hover{color:#2f6d60}
+@keyframes tscEye{0%,35%{transform:translateX(0)}45%,85%{transform:translateX(3px)}100%{transform:translateX(0)}}
+@keyframes tscStamp{0%,55%{transform:rotate(-8deg) scale(1.9);opacity:0}68%{transform:rotate(-8deg) scale(.96);opacity:1}74%{transform:rotate(-8deg) scale(1.02)}80%,100%{transform:rotate(-8deg) scale(1);opacity:1}}
+@keyframes tscStrike{0%,15%{transform:scaleX(0)}55%,100%{transform:scaleX(1)}}
+@keyframes tscBar{0%,20%{transform:scaleX(0)}60%,100%{transform:scaleX(1)}}
+@keyframes tscSquish{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.82)}}
+@keyframes samFloat{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-7px) rotate(-1.5deg)}}
+@keyframes samLid{0%,93%,100%{transform:translateY(-36px)}95.5%,96.5%{transform:translateY(0)}}
+@keyframes samTalk{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1.25)}}
+.sam-stage:hover .sam-body{animation-duration:1.6s}
+.sam-chip{cursor:pointer;border:none;white-space:nowrap;font:700 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;padding:9px 14px;border-radius:99px;transition:transform .12s ease,box-shadow .12s ease}
+.sam-chip:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(51,41,31,.18)}
+.sam-chip:active{transform:translateY(0)}
+.tsc-strike{position:absolute;left:0;height:2px;width:100%;background:#D95B43;transform-origin:left;animation:tscStrike 3.8s ease-in-out infinite}
+.tsc-bar{display:inline-block;position:relative;color:transparent}
+.tsc-bar::after{content:"";position:absolute;inset:-1px -3px;background:#33291F;border-radius:2px;transform-origin:left;animation:tscBar 4.2s ease-in-out infinite}
+</style>
+</helmet>
+
+<div style="max-width:1180px;margin:0 auto;padding:36px 28px 60px;display:flex;flex-direction:column;gap:22px">
+
+<svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<defs>
+<symbol id="samCalm" viewBox="0 0 300 244">
+<path d="M54 170 h192 v26 a10 10 0 0 1 -10 10 H64 a10 10 0 0 1 -10 -10 z" fill="#D99F3A"></path>
+<path d="M62 170 h176 v23 a7 7 0 0 1 -7 7 H69 a7 7 0 0 1 -7 -7 z" fill="#F5E0B0"></path>
+<rect x="44" y="160" width="212" height="12" rx="2" fill="#F7B733"></rect>
+<rect x="250" y="156" width="20" height="20" rx="2.5" fill="#F7B733" transform="rotate(38 260 166)"></rect>
+<rect x="48" y="146" width="204" height="16" rx="5" fill="#D95B43"></rect>
+<rect x="48" y="146" width="204" height="5" rx="2.5" fill="#E2705B"></rect>
+<path d="M38 129 H262 v8 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 z" fill="#3E8E7E"></path>
+<path d="M38 129 H262 v4 H38 z" fill="#4CA189"></path>
+<path d="M58 130 H242 Q250 130 250 122 V74 C250 52 230 32 200 32 C180 32 162 41 150 50 C138 41 120 32 100 32 C70 32 50 52 50 74 V122 Q50 130 58 130 Z" fill="#D99F3A"></path>
+<path d="M64 123 H236 Q243 123 243 116 V76 C243 59 226 40 200 40 C182 40 165 48 150 58 C135 48 118 40 100 40 C74 40 57 59 57 76 V116 Q57 123 64 123 Z" fill="#F5E0B0"></path>
+<rect x="108" y="61" width="24" height="5.5" rx="2.75" fill="#2A211A"></rect>
+<rect x="168" y="61" width="24" height="5.5" rx="2.75" fill="#2A211A"></rect>
+<ellipse cx="120" cy="84" rx="13" ry="14" fill="#FFF9EE" stroke="#2A211A" stroke-width="2.5"></ellipse>
+<ellipse cx="180" cy="84" rx="13" ry="14" fill="#FFF9EE" stroke="#2A211A" stroke-width="2.5"></ellipse>
+<circle cx="121" cy="85" r="6.5" fill="#2A211A"></circle><circle cx="181" cy="85" r="6.5" fill="#2A211A"></circle>
+<circle cx="124" cy="80" r="2.2" fill="#FFF9EE"></circle><circle cx="184" cy="80" r="2.2" fill="#FFF9EE"></circle>
+<path d="M136 106 q14 13 28 0" stroke="#2A211A" stroke-width="4.5" fill="none" stroke-linecap="round"></path>
+</symbol>
+<symbol id="samSide" viewBox="0 0 300 244">
+<path d="M54 170 h192 v26 a10 10 0 0 1 -10 10 H64 a10 10 0 0 1 -10 -10 z" fill="#D99F3A"></path>
+<path d="M62 170 h176 v23 a7 7 0 0 1 -7 7 H69 a7 7 0 0 1 -7 -7 z" fill="#F5E0B0"></path>
+<rect x="44" y="160" width="212" height="12" rx="2" fill="#F7B733"></rect>
+<rect x="250" y="156" width="20" height="20" rx="2.5" fill="#F7B733" transform="rotate(38 260 166)"></rect>
+<rect x="48" y="146" width="204" height="16" rx="5" fill="#D95B43"></rect>
+<rect x="48" y="146" width="204" height="5" rx="2.5" fill="#E2705B"></rect>
+<path d="M38 129 H262 v8 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 z" fill="#3E8E7E"></path>
+<path d="M38 129 H262 v4 H38 z" fill="#4CA189"></path>
+<path d="M58 130 H242 Q250 130 250 122 V74 C250 52 230 32 200 32 C180 32 162 41 150 50 C138 41 120 32 100 32 C70 32 50 52 50 74 V122 Q50 130 58 130 Z" fill="#D99F3A"></path>
+<path d="M64 123 H236 Q243 123 243 116 V76 C243 59 226 40 200 40 C182 40 165 48 150 58 C135 48 118 40 100 40 C74 40 57 59 57 76 V116 Q57 123 64 123 Z" fill="#F5E0B0"></path>
+<rect x="108" y="61" width="24" height="5.5" rx="2.75" fill="#2A211A" transform="rotate(-13 120 64)"></rect>
+<rect x="168" y="61" width="24" height="5.5" rx="2.75" fill="#2A211A" transform="rotate(-6 180 64)"></rect>
+<ellipse cx="120" cy="84" rx="13" ry="14" fill="#FFF9EE" stroke="#2A211A" stroke-width="2.5"></ellipse>
+<ellipse cx="180" cy="84" rx="13" ry="14" fill="#FFF9EE" stroke="#2A211A" stroke-width="2.5"></ellipse>
+<circle cx="126" cy="84" r="6.5" fill="#2A211A"></circle><circle cx="186" cy="84" r="6.5" fill="#2A211A"></circle>
+<path d="M137 109 h26" stroke="#2A211A" stroke-width="4.5" fill="none" stroke-linecap="round"></path>
+</symbol>
+<symbol id="samOverIt" viewBox="0 0 300 244">
+<path d="M54 170 h192 v26 a10 10 0 0 1 -10 10 H64 a10 10 0 0 1 -10 -10 z" fill="#D99F3A"></path>
+<path d="M62 170 h176 v23 a7 7 0 0 1 -7 7 H69 a7 7 0 0 1 -7 -7 z" fill="#F5E0B0"></path>
+<rect x="44" y="160" width="212" height="12" rx="2" fill="#F7B733"></rect>
+<rect x="250" y="156" width="20" height="20" rx="2.5" fill="#F7B733" transform="rotate(38 260 166)"></rect>
+<rect x="48" y="146" width="204" height="16" rx="5" fill="#D95B43"></rect>
+<rect x="48" y="146" width="204" height="5" rx="2.5" fill="#E2705B"></rect>
+<path d="M38 129 H262 v8 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 z" fill="#3E8E7E"></path>
+<path d="M38 129 H262 v4 H38 z" fill="#4CA189"></path>
+<path d="M58 130 H242 Q250 130 250 122 V74 C250 52 230 32 200 32 C180 32 162 41 150 50 C138 41 120 32 100 32 C70 32 50 52 50 74 V122 Q50 130 58 130 Z" fill="#D99F3A"></path>
+<path d="M64 123 H236 Q243 123 243 116 V76 C243 59 226 40 200 40 C182 40 165 48 150 58 C135 48 118 40 100 40 C74 40 57 59 57 76 V116 Q57 123 64 123 Z" fill="#F5E0B0"></path>
+<rect x="108" y="65" width="24" height="5.5" rx="2.75" fill="#2A211A" transform="rotate(9 120 68)"></rect>
+<rect x="168" y="65" width="24" height="5.5" rx="2.75" fill="#2A211A" transform="rotate(-9 180 68)"></rect>
+<ellipse cx="120" cy="84" rx="13" ry="14" fill="#FFF9EE" stroke="#2A211A" stroke-width="2.5"></ellipse>
+<ellipse cx="180" cy="84" rx="13" ry="14" fill="#FFF9EE" stroke="#2A211A" stroke-width="2.5"></ellipse>
+<circle cx="121" cy="87" r="6.5" fill="#2A211A"></circle><circle cx="181" cy="87" r="6.5" fill="#2A211A"></circle>
+<path d="M107 70 h26 v10 q-13 6 -26 0 z" fill="#F5E0B0"></path>
+<path d="M167 70 h26 v10 q-13 6 -26 0 z" fill="#F5E0B0"></path>
+<path d="M136 113 q14 -12 28 0" stroke="#2A211A" stroke-width="4.5" fill="none" stroke-linecap="round"></path>
+</symbol>
+<symbol id="samV1" viewBox="0 0 300 244">
+<path d="M52 78 V44 a14 14 0 0 1 14 -14 h168 a14 14 0 0 1 14 14 v34 z" fill="#D99F3A"></path>
+<path d="M61 78 V50 a9 9 0 0 1 9 -9 h160 a9 9 0 0 1 9 9 v28 z" fill="#F0C265"></path>
+<rect x="46" y="78" width="208" height="58" rx="8" fill="#D95B43"></rect>
+<ellipse cx="122" cy="100" rx="14.5" ry="15.5" fill="#FFF6EA"></ellipse>
+<ellipse cx="178" cy="100" rx="14.5" ry="15.5" fill="#FFF6EA"></ellipse>
+<circle cx="122" cy="102" r="6.8" fill="#2A211A"></circle><circle cx="178" cy="102" r="6.8" fill="#2A211A"></circle>
+<path d="M136 120 q14 13 28 0" stroke="#2A211A" stroke-width="4.5" fill="none" stroke-linecap="round"></path>
+<path d="M38 136 H262 v10 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 q-14 12 -26 -1 z" fill="#3E8E7E"></path>
+<rect x="44" y="156" width="212" height="13" rx="3" fill="#F2C063"></rect>
+<path d="M52 169 h196 v26 a14 14 0 0 1 -14 14 H66 a14 14 0 0 1 -14 -14 z" fill="#D99F3A"></path>
+<path d="M61 169 h178 v22 a9 9 0 0 1 -9 9 H70 a9 9 0 0 1 -9 -9 z" fill="#F0C265"></path>
+</symbol>
+</defs>
+</svg>
+
+<div data-screen-label="Masthead" style="background:#33291F;border-radius:14px;padding:24px 30px;display:flex;justify-content:space-between;align-items:center;gap:20px">
+<div style="display:flex;align-items:center;gap:18px">
+<svg viewBox="0 0 300 244" width="76" height="62" style="display:block;overflow:visible"><use href="#samCalm"></use></svg>
+<div>
+<div style="font:800 28px/1 'Baloo 2',sans-serif;color:#F6EEDD;letter-spacing:-.01em">the sandwich carer</div>
+<div style="margin-top:7px;font:400 12.5px 'Atkinson Hyperlegible',sans-serif;color:#c9bdaa">NDIS and aged care, in plain English. Independent, unaffiliated.</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:7px;align-items:flex-end">
+<div style="display:flex;gap:6px">
+<span style="font:700 10px 'IBM Plex Mono',monospace;letter-spacing:.1em;padding:5px 10px;border-radius:99px;background:#3E8E7E;color:#F6EEDD;white-space:nowrap">NDIS</span>
+<span style="font:700 10px 'IBM Plex Mono',monospace;letter-spacing:.1em;padding:5px 10px;border-radius:99px;background:#D95B43;color:#F6EEDD;white-space:nowrap">AGED CARE</span>
+<span style="font:700 10px 'IBM Plex Mono',monospace;letter-spacing:.1em;padding:5px 10px;border-radius:99px;background:#E8B34B;color:#33291F;white-space:nowrap">CORE DESIGN · v2</span>
+</div>
+<span style="font:400 10px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#8a7f6f">1b BASE + 1a TYPE &amp; FORMAT + 1c EDGE · SAM REDRAWN</span>
+</div>
+</div>
+
+<div class="dv-card" data-screen-label="Sam take two" style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;overflow:hidden;display:flex;flex-wrap:wrap;align-items:stretch">
+<div class="sam-stage" style="flex:none;width:560px;background:radial-gradient(circle at 50% 42%,#FBF3E2 0%,#F2E7D2 70%,#EADCC2 100%);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 0 26px;cursor:crosshair" onMouseMove="{{ onMove }}" onMouseLeave="{{ onLeave }}" onClick="{{ onPoke }}">
+<div style="position:absolute;top:18px;left:22px;font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#a8977c">SAM · TAKE TWO · MOVE YOUR CURSOR</div>
+<div style="position:relative">
+<svg viewBox="0 0 300 244" width="410" height="334" style="overflow:visible;display:block">
+<defs>
+<clipPath id="samEyeL"><ellipse cx="120" cy="84" rx="13" ry="14"></ellipse></clipPath>
+<clipPath id="samEyeR"><ellipse cx="180" cy="84" rx="13" ry="14"></ellipse></clipPath>
+</defs>
+<ellipse cx="150" cy="226" rx="104" ry="12" fill="#33291F" opacity="0.13" style="{{ shadowStyle }}"></ellipse>
+<g class="sam-body" style="animation:samFloat 3.6s ease-in-out infinite;transform-origin:150px 220px">
+<g style="{{ squishStyle }}">
+<g style="{{ layerBottomStyle }}">
+<path d="M54 170 h192 v26 a10 10 0 0 1 -10 10 H64 a10 10 0 0 1 -10 -10 z" fill="#D99F3A"></path>
+<path d="M62 170 h176 v23 a7 7 0 0 1 -7 7 H69 a7 7 0 0 1 -7 -7 z" fill="#F5E0B0"></path>
+</g>
+<g style="{{ layerCheeseStyle }}">
+<rect x="44" y="160" width="212" height="12" rx="2" fill="#F7B733"></rect>
+<rect x="250" y="156" width="20" height="20" rx="2.5" fill="#F7B733" transform="rotate(38 260 166)"></rect>
+</g>
+<g style="{{ layerTomatoStyle }}">
+<rect x="48" y="146" width="204" height="16" rx="5" fill="#D95B43"></rect>
+<rect x="48" y="146" width="204" height="5" rx="2.5" fill="#E2705B"></rect>
+</g>
+<g style="{{ layerLettuceStyle }}">
+<path d="M38 129 H262 v8 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 z" fill="#3E8E7E"></path>
+<path d="M38 129 H262 v4 H38 z" fill="#4CA189"></path>
+</g>
+<g style="{{ layerTopStyle }}">
+<path d="M58 130 H242 Q250 130 250 122 V74 C250 52 230 32 200 32 C180 32 162 41 150 50 C138 41 120 32 100 32 C70 32 50 52 50 74 V122 Q50 130 58 130 Z" fill="#D99F3A"></path>
+<path d="M64 123 H236 Q243 123 243 116 V76 C243 59 226 40 200 40 C182 40 165 48 150 58 C135 48 118 40 100 40 C74 40 57 59 57 76 V116 Q57 123 64 123 Z" fill="#F5E0B0"></path>
+<path d="M78 52 q14 -6 28 -1" stroke="#EFD094" stroke-width="4" fill="none" stroke-linecap="round" opacity=".9"></path>
+<g transform="{{ browLTf }}"><rect x="108" y="61" width="24" height="5.5" rx="2.75" fill="#2A211A"></rect></g>
+<g transform="{{ browRTf }}"><rect x="168" y="61" width="24" height="5.5" rx="2.75" fill="#2A211A"></rect></g>
+<ellipse cx="120" cy="84" rx="13" ry="14" fill="#FFF9EE"></ellipse>
+<ellipse cx="180" cy="84" rx="13" ry="14" fill="#FFF9EE"></ellipse>
+<g clip-path="url(#samEyeL)"><circle ref="{{ pupilL }}" cx="121" cy="85" r="6.5" fill="#2A211A"></circle><circle ref="{{ glintL }}" cx="124" cy="80" r="2.2" fill="#FFF9EE"></circle><rect x="104" y="68" width="32" height="34" fill="#F5E0B0" style="animation:samLid 5.2s ease-in-out infinite"></rect></g>
+<g clip-path="url(#samEyeR)"><circle ref="{{ pupilR }}" cx="181" cy="85" r="6.5" fill="#2A211A"></circle><circle ref="{{ glintR }}" cx="184" cy="80" r="2.2" fill="#FFF9EE"></circle><rect x="164" y="68" width="32" height="34" fill="#F5E0B0" style="animation:samLid 5.2s ease-in-out infinite"></rect></g>
+<ellipse cx="120" cy="84" rx="13" ry="14" fill="none" stroke="#2A211A" stroke-width="2.5"></ellipse>
+<ellipse cx="180" cy="84" rx="13" ry="14" fill="none" stroke="#2A211A" stroke-width="2.5"></ellipse>
+<path d="M136 106 q14 13 28 0" stroke="#2A211A" stroke-width="4.5" fill="none" stroke-linecap="round" style="{{ mouthSmile }}"></path>
+<path d="M137 109 h26" stroke="#2A211A" stroke-width="4.5" fill="none" stroke-linecap="round" style="{{ mouthFlat }}"></path>
+<path d="M136 113 q14 -12 28 0" stroke="#2A211A" stroke-width="4.5" fill="none" stroke-linecap="round" style="{{ mouthWorried }}"></path>
+<ellipse cx="150" cy="108" rx="10" ry="7.5" fill="#2A211A" style="{{ mouthTalk }}"></ellipse>
+</g>
+</g>
+</g>
+</svg>
+<div style="position:absolute;right:-34px;top:6px;font:800 17px/1.05 'Baloo 2',sans-serif;color:#C14B3A;border:3px solid #C14B3A;border-radius:6px;padding:7px 12px;letter-spacing:.03em;text-align:center;background:rgba(251,243,226,.92);pointer-events:none;transition:transform .22s cubic-bezier(.2,1.5,.4,1),opacity .18s ease;{{ stampStyle }}">JARGON<br>REMOVED</div>
+<div style="position:absolute;left:-20px;bottom:44px;font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#33291F;background:#F2C063;padding:5px 9px;border-radius:99px;pointer-events:none;transition:opacity .2s ease;{{ layerLabelStyle }}">5 FLAT LAYERS</div>
+</div>
+<div style="margin-top:20px;font:400 11.5px 'Atkinson Hyperlegible',sans-serif;color:#a8977c;transition:opacity .3s ease;{{ captionStyle }}">click him</div>
+</div>
+
+<div style="flex:1;min-width:340px;padding:26px 28px;display:flex;flex-direction:column;gap:16px">
+<div>
+<div style="font:800 26px/1.05 'Baloo 2',sans-serif;color:#33291F">Sam, take two.</div>
+<div style="margin-top:7px;font:400 12.5px/1.5 'Atkinson Hyperlegible',sans-serif;color:#6b5d4d">Susan's note: v1 read as a burger. It did, because the face sat on a patty-shaped tomato under a domed top. Three changes fix it, with no new colours.</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;font:400 12px/1.45 'Atkinson Hyperlegible',sans-serif;color:#6b5d4d">
+<div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;font:800 12px/1 'Baloo 2',sans-serif;background:#E8B34B;color:#33291F;width:20px;height:20px;border-radius:99px;display:flex;align-items:center;justify-content:center">1</span><span><strong style="color:#33291F">A real bread slice carries the face.</strong> Lobes on top, square-cut sides, crust and crumb. Nothing domed, nothing bun-shaped.</span></div>
+<div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;font:800 12px/1 'Baloo 2',sans-serif;background:#D95B43;color:#fff;width:20px;height:20px;border-radius:99px;display:flex;align-items:center;justify-content:center">2</span><span><strong style="color:#33291F">Thin fillings that hang out.</strong> Lettuce, tomato and cheese are slivers poking past the crust. The overhang is the sandwich tell.</span></div>
+<div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;font:800 12px/1 'Baloo 2',sans-serif;background:#3E8E7E;color:#fff;width:20px;height:20px;border-radius:99px;display:flex;align-items:center;justify-content:center">3</span><span><strong style="color:#33291F">Edge-on base.</strong> The bottom slice is a slice, not a bun. Still five flat layers, so every move stays a preset.</span></div>
+</div>
+<div style="display:flex;gap:10px;align-items:center;background:#faf8f5;border-radius:12px;padding:10px 14px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px">
+<svg viewBox="0 0 300 244" width="58" height="47" style="display:block;opacity:.7"><use href="#samV1"></use></svg>
+<span style="font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#C14B3A;text-decoration:line-through;text-decoration-thickness:2px">v1 · BURGER</span>
+</div>
+<span style="font:800 18px 'Baloo 2',sans-serif;color:#c9bdaa">→</span>
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px">
+<svg viewBox="0 0 300 244" width="58" height="47" style="display:block"><use href="#samCalm"></use></svg>
+<span style="font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#3E8E7E">v2 · SANDWICH</span>
+</div>
+<div style="flex:1;font:400 11px/1.45 'Atkinson Hyperlegible',sans-serif;color:#6b5d4d;padding-left:6px">Same palette, same rig, same five layers. Only the silhouette changed.</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:9px">
+<div style="font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#8f7f68">MOOD</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<button class="sam-chip" onClick="{{ setCalm }}" style="{{ chipCalm }}">CALM</button>
+<button class="sam-chip" onClick="{{ setSide }}" style="{{ chipSide }}">SIDE-EYE</button>
+<button class="sam-chip" onClick="{{ setFlat }}" style="{{ chipFlat }}">OVER IT</button>
+<button class="sam-chip" onClick="{{ setTalk }}" style="{{ chipTalk }}">TALKING</button>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#8f7f68">SQUEEZE</span><span style="font:600 10px 'IBM Plex Mono',monospace;color:#D95B43;white-space:nowrap">{{ squeezeLabel }}</span></div>
+<input type="range" min="0" max="100" value="{{ squeeze }}" onInput="{{ onSqueeze }}" style="width:100%;accent-color:#D95B43;cursor:ew-resize">
+</div>
+<div style="display:flex;gap:8px">
+<button class="sam-chip" onClick="{{ onStamp }}" style="background:#C14B3A;color:#fff">STAMP IT</button>
+<button class="sam-chip" onClick="{{ onExplode }}" style="{{ chipExplode }}">{{ explodeLabel }}</button>
+<button class="sam-chip" onClick="{{ onReset }}" style="background:#F6EEDD;color:#33291F">RESET</button>
+</div>
+<div style="margin-top:auto;display:flex;gap:14px;align-items:center;background:#faf8f5;border-radius:12px;padding:12px 16px">
+<div style="flex:none;display:flex;gap:10px;align-items:flex-end">
+<div style="width:54px;height:54px;border-radius:50%;background:#33291F;display:flex;align-items:center;justify-content:center;overflow:hidden">
+<svg viewBox="20 0 260 260" width="54" height="54" preserveAspectRatio="xMidYMid slice"><use href="#samCalm"></use></svg>
+</div>
+<div style="width:34px;height:34px;border-radius:50%;background:#33291F;display:flex;align-items:center;justify-content:center;overflow:hidden">
+<svg viewBox="50 26 200 200" width="34" height="34" preserveAspectRatio="xMidYMid slice"><use href="#samCalm"></use></svg>
+</div>
+<div style="width:22px;height:22px;border-radius:50%;background:#33291F;display:flex;align-items:center;justify-content:center;overflow:hidden">
+<svg viewBox="80 40 140 140" width="22" height="22" preserveAspectRatio="xMidYMid slice"><use href="#samCalm"></use></svg>
+</div>
+</div>
+<div style="font:400 11px/1.45 'Atkinson Hyperlegible',sans-serif;color:#6b5d4d"><strong style="color:#33291F">Holds up small.</strong> Profile crops at 180px, 110px and 70px. The face crops in as he shrinks; the lettuce still shows at 70.</div>
+</div>
+</div>
+</div>
+
+<div data-screen-label="Palette and type" style="display:flex;gap:22px">
+<div style="flex:1.15;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:14px">
+<div style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.09em;color:#8f7f68">PALETTE — THE DELI, UNCHANGED</div>
+<div style="display:flex;gap:8px">
+<div style="flex:1"><div style="height:52px;border-radius:8px;background:#E8B34B"></div><div style="margin-top:6px;font:400 9.5px 'IBM Plex Mono',monospace;color:#33291F">#E8B34B bread</div><div style="font:400 10px/1.3 'Atkinson Hyperlegible',sans-serif;color:#8f7f68;margin-top:2px">covers, how-to guides</div></div>
+<div style="flex:1"><div style="height:52px;border-radius:8px;background:#D95B43"></div><div style="margin-top:6px;font:400 9.5px 'IBM Plex Mono',monospace;color:#33291F">#D95B43 tomato</div><div style="font:400 10px/1.3 'Atkinson Hyperlegible',sans-serif;color:#8f7f68;margin-top:2px">hot takes, strikes, stamps</div></div>
+<div style="flex:1"><div style="height:52px;border-radius:8px;background:#3E8E7E"></div><div style="margin-top:6px;font:400 9.5px 'IBM Plex Mono',monospace;color:#33291F">#3E8E7E lettuce</div><div style="font:400 10px/1.3 'Atkinson Hyperlegible',sans-serif;color:#8f7f68;margin-top:2px">NDIS tag, tips, links</div></div>
+<div style="flex:1"><div style="height:52px;border-radius:8px;background:#F6EEDD;border:1px solid rgba(0,0,0,.08)"></div><div style="margin-top:6px;font:400 9.5px 'IBM Plex Mono',monospace;color:#33291F">#F6EEDD paper</div><div style="font:400 10px/1.3 'Atkinson Hyperlegible',sans-serif;color:#8f7f68;margin-top:2px">updates, real talk</div></div>
+<div style="flex:1"><div style="height:52px;border-radius:8px;background:#33291F"></div><div style="margin-top:6px;font:400 9.5px 'IBM Plex Mono',monospace;color:#33291F">#33291F ink</div><div style="font:400 10px/1.3 'Atkinson Hyperlegible',sans-serif;color:#8f7f68;margin-top:2px">translations, reels, wordmark</div></div>
+</div>
+<div style="display:flex;gap:8px;align-items:center;border-top:1px solid rgba(0,0,0,.07);padding-top:12px">
+<div style="flex:1"><div style="height:22px;border-radius:6px;background:#5CA470"></div><div style="margin-top:4px;font:700 9px 'IBM Plex Mono',monospace;color:#33291F;letter-spacing:.05em">USEFUL</div></div>
+<div style="flex:1"><div style="height:22px;border-radius:6px;background:#D9A03F"></div><div style="margin-top:4px;font:700 9px 'IBM Plex Mono',monospace;color:#33291F;letter-spacing:.05em">WATCH</div></div>
+<div style="flex:1"><div style="height:22px;border-radius:6px;background:#C14B3A"></div><div style="margin-top:4px;font:700 9px 'IBM Plex Mono',monospace;color:#33291F;letter-spacing:.05em">BURIED</div></div>
+<div style="flex:2.2;font:400 11px/1.45 'Atkinson Hyperlegible',sans-serif;color:#8f7f68;padding-left:6px">The traffic lights flag every update post, NDIS or aged care. Three colours, no legend needed.</div>
+</div>
+</div>
+<div style="flex:1;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:13px">
+<div style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.09em;color:#8f7f68">TYPE — CLARITY OVER CUTE</div>
+<div><div style="font:800 30px/1.05 'Baloo 2',sans-serif;color:#33291F;letter-spacing:-.005em">Plan review in six weeks?</div><div style="font:400 9.5px 'IBM Plex Mono',monospace;color:#8f7f68;margin-top:4px">HEADLINE · Baloo 2 · 800 · warm and firm, not childish</div></div>
+<div><div style="font:400 15px/1.4 'Atkinson Hyperlegible',sans-serif;color:#33291F">Prep it like a pro. Seven slides, one checklist, and the three things planners actually ask.</div><div style="font:400 9.5px 'IBM Plex Mono',monospace;color:#8f7f68;margin-top:4px">BODY · Atkinson Hyperlegible · 400 · built for low-vision readers</div></div>
+<div><div style="font:700 10px 'IBM Plex Mono',monospace;color:#33291F;letter-spacing:.1em">HOW TO NOT STUFF THIS UP · Nº3 · NDIS</div><div style="font:400 9.5px 'IBM Plex Mono',monospace;color:#8f7f68;margin-top:4px">LABEL · IBM Plex Mono · 700 · tracked, for tags and dates</div></div>
+<div><div style="font:400 13px 'IBM Plex Mono',monospace;color:#6b5d4d;text-decoration:line-through;text-decoration-color:#D95B43;text-decoration-thickness:2px">reasonable and necessary supports</div><div style="font:400 9.5px 'IBM Plex Mono',monospace;color:#8f7f68;margin-top:4px">JARGON · Plex Mono · 400 · only ever used for what we strike out</div></div>
+</div>
+</div>
+
+<div data-screen-label="The edge" style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:baseline">
+<div style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.09em;color:#8f7f68">THE EDGE — 1c, LAYERED ON 1b'S WARMTH</div>
+<div style="font:400 10px 'Atkinson Hyperlegible',sans-serif;color:#8f7f68">four moves, reused everywhere · no bespoke treatments per post</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:12px">
+<div style="background:#F6EEDD;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:190px">
+<div style="font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#8f7f68">STRIKETHROUGH</div>
+<div style="position:relative;display:inline-block">
+<div style="font:400 11px/1.55 'IBM Plex Mono',monospace;color:#8f7f68">"Participants are encouraged to self-manage where capacity permits."</div>
+<div class="tsc-strike" style="top:8px"></div>
+<div class="tsc-strike" style="top:25px;animation-delay:.1s"></div>
+<div class="tsc-strike" style="top:42px;width:62%;animation-delay:.2s"></div>
+</div>
+<div style="font:800 17px/1.15 'Baloo 2',sans-serif;color:#33291F">You can run the money yourself, if you want to.</div>
+<div style="margin-top:auto;font:400 10px/1.4 'Atkinson Hyperlegible',sans-serif;color:#8f7f68">The line draws itself. Jargon is always mono, always grey, always struck.</div>
+</div>
+<div style="background:#F6EEDD;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:190px">
+<div style="font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#8f7f68">REDACTION</div>
+<div style="font:400 13px/1.6 'Atkinson Hyperlegible',sans-serif;color:#33291F">Your <span class="tsc-bar">reasonable and necessary</span> supports, subject to <span class="tsc-bar" style="animation-delay:.3s">the participant's informal, community and mainstream</span> options.</div>
+<div style="font:800 17px/1.15 'Baloo 2',sans-serif;color:#33291F">Your supports. The ones you actually need.</div>
+<div style="margin-top:auto;font:400 10px/1.4 'Atkinson Hyperlegible',sans-serif;color:#8f7f68">Bars for the bits that don't help you. What's left is the sentence.</div>
+</div>
+<div style="background:#F6EEDD;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:190px">
+<div style="font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#8f7f68">STAMPS</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start;padding:4px 0">
+<span style="font:800 13px 'Baloo 2',sans-serif;color:#C14B3A;border:2.5px solid #C14B3A;border-radius:4px;padding:3px 8px;letter-spacing:.03em;transform:rotate(-6deg);display:inline-block">JARGON REMOVED</span>
+<span style="font:800 13px 'Baloo 2',sans-serif;color:#3E8E7E;border:2.5px solid #3E8E7E;border-radius:4px;padding:3px 8px;letter-spacing:.03em;transform:rotate(3deg);display:inline-block">TRANSLATED</span>
+<span style="font:800 13px 'Baloo 2',sans-serif;color:#F6EEDD;background:#D95B43;border:2.5px solid #D95B43;border-radius:4px;padding:3px 8px;letter-spacing:.03em;transform:rotate(-4deg);display:inline-block">SAID IT</span>
+<span style="font:800 13px 'Baloo 2',sans-serif;color:#33291F;border:2.5px solid #33291F;border-radius:4px;padding:3px 8px;letter-spacing:.03em;transform:rotate(5deg);display:inline-block">BURIED · P.14</span>
+</div>
+<div style="margin-top:auto;font:400 10px/1.4 'Atkinson Hyperlegible',sans-serif;color:#8f7f68">Four stamps, one per job. They slam onto the payoff frame, never the first one.</div>
+</div>
+<div style="background:#F6EEDD;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:190px;position:relative;overflow:hidden">
+<div style="font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#8f7f68">SIDE-EYE</div>
+<div style="display:flex;gap:10px;align-items:center">
+<svg viewBox="0 0 300 244" width="86" height="70" style="display:block;flex:none"><use href="#samSide"></use></svg>
+<div style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#8f7f68;border:1.5px dashed #c9bdaa;border-radius:8px;padding:8px 10px">"co-design"</div>
+</div>
+<div style="font:800 15px/1.15 'Baloo 2',sans-serif;color:#33291F">He reacts to the word.</div>
+<div style="margin-top:auto;font:400 10px/1.4 'Atkinson Hyperlegible',sans-serif;color:#8f7f68">Sam gets attitude at an acronym, a policy or a form. Never at a planner, a worker or a family.</div>
+</div>
+</div>
+<div style="display:flex;gap:12px;align-items:center;background:#33291F;border-radius:8px;padding:12px 16px">
+<span style="flex:none;font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#33291F;background:#E8B34B;padding:4px 8px;border-radius:99px">THE RULE</span>
+<span style="font:400 12px/1.45 'Atkinson Hyperlegible',sans-serif;color:#F6EEDD">Strikes, bars and stamps land on <strong>language</strong>. Never on a person. That's what keeps the edge warm instead of mean, and it's what keeps us on the right side of the NDIA and the aged care providers we write about.</span>
+</div>
+</div>
+
+<div data-screen-label="System in use" style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:22px 24px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+<div style="font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.09em;color:#8f7f68">THE SYSTEM IN USE — FIVE PILLARS, TWO AUDIENCES, ONE FEED</div>
+<div style="font:400 10px 'Atkinson Hyperlegible',sans-serif;color:#8f7f68">every post carries a scope tag: NDIS, AGED CARE or BOTH</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<div style="flex:none;width:272px;height:272px;background:#F6EEDD;border-radius:6px;padding:18px;box-sizing:border-box;display:flex;flex-direction:column">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<span style="font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.05em;padding:3px 7px;border-radius:3px;background:#3E8E7E;color:#F6EEDD">NDIS</span>
+<span style="font:400 9px 'IBM Plex Mono',monospace;color:#8f7f68">12 AUG · Nº14</span>
+</div>
+<div style="margin-top:10px;font:800 19px/1.1 'Baloo 2',sans-serif;color:#33291F">What the NDIS just said</div>
+<div style="font:400 10.5px/1.3 'Atkinson Hyperlegible',sans-serif;color:#6b5d4d;margin-top:3px">The fortnightly newsletter, in 90 seconds.</div>
+<div style="margin-top:11px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;gap:7px;align-items:flex-start"><span style="flex:none;font:700 8px 'IBM Plex Mono',monospace;color:#fff;background:#5CA470;padding:2.5px 5px;border-radius:3px;letter-spacing:.04em">USEFUL</span><span style="font:400 10px/1.35 'Atkinson Hyperlegible',sans-serif;color:#33291F">Core funds now flex between support types. No review needed.</span></div>
+<div style="display:flex;gap:7px;align-items:flex-start"><span style="flex:none;font:700 8px 'IBM Plex Mono',monospace;color:#33291F;background:#D9A03F;padding:2.5px 5px;border-radius:3px;letter-spacing:.04em">WATCH</span><span style="font:400 10px/1.35 'Atkinson Hyperlegible',sans-serif;color:#33291F">Navigator pilot lands October. Nobody can say what one does yet.</span></div>
+<div style="display:flex;gap:7px;align-items:flex-start"><span style="flex:none;font:700 8px 'IBM Plex Mono',monospace;color:#fff;background:#C14B3A;padding:2.5px 5px;border-radius:3px;letter-spacing:.04em">BURIED</span><span style="font:400 10px/1.35 'Atkinson Hyperlegible',sans-serif;color:#33291F">Therapy price limits frozen for a third year. Page 14.</span></div>
+</div>
+<div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between">
+<span style="font:700 10px 'Baloo 2',sans-serif;color:#33291F">the sandwich carer</span>
+<svg viewBox="0 0 300 244" width="54" height="44" style="display:block"><use href="#samCalm"></use></svg>
+</div>
+</div>
+<div style="flex:none;width:272px;height:272px;background:#33291F;border-radius:6px;padding:18px;box-sizing:border-box;display:flex;flex-direction:column;position:relative;overflow:hidden">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<span style="font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.05em;padding:3px 7px;border-radius:3px;background:#D95B43;color:#fff">AGED CARE</span>
+<span style="font:400 9px 'IBM Plex Mono',monospace;color:#9b9082">SLIDE 2 OF 5</span>
+</div>
+<div style="margin-top:12px;position:relative;display:inline-block">
+<div style="font:400 10.5px/1.5 'IBM Plex Mono',monospace;color:#9b9082">"Support at Home participants may be subject to a co-contribution determined by means testing."</div>
+<div class="tsc-strike" style="top:8px"></div>
+<div class="tsc-strike" style="top:24px;animation-delay:.1s"></div>
+<div class="tsc-strike" style="top:40px;width:88%;animation-delay:.2s"></div>
+</div>
+<div style="margin-top:12px;font:700 9.5px 'IBM Plex Mono',monospace;color:#E8B34B;letter-spacing:.1em">TRANSLATION</div>
+<div style="margin-top:5px;font:800 21px/1.13 'Baloo 2',sans-serif;color:#F6EEDD">You may have to chip in. How much depends on your income.</div>
+<div style="margin-top:auto;font:400 9px 'IBM Plex Mono',monospace;color:#9b9082">swipe for what it means for Mum →</div>
+<div style="position:absolute;right:-22px;bottom:-14px;transform:rotate(-12deg);animation:tscEye 3.6s ease-in-out infinite">
+<svg viewBox="0 0 300 244" width="104" height="85" style="display:block"><use href="#samSide"></use></svg>
+</div>
+</div>
+<div style="flex:none;width:272px;height:272px;background:#D95B43;border-radius:6px;padding:18px;box-sizing:border-box;display:flex;flex-direction:column;position:relative;overflow:hidden">
+<span style="align-self:flex-start;font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.05em;padding:3px 7px;border-radius:3px;background:#33291F;color:#F6EEDD">HOT TAKE · BOTH</span>
+<div style="margin:auto 0;font:800 25px/1.16 'Baloo 2',sans-serif;color:#F6EEDD">"Co-design" means asking us first. Not telling us afterwards.</div>
+<div style="font:700 9px 'IBM Plex Mono',monospace;color:#F6EEDD;letter-spacing:.06em;opacity:.85">THE SANDWICH CARER</div>
+<div style="position:absolute;right:14px;bottom:44px;font:800 13px 'Baloo 2',sans-serif;color:#F6EEDD;border:2.5px solid #F6EEDD;border-radius:4px;padding:3px 8px;letter-spacing:.03em;animation:tscStamp 3.4s ease-in-out infinite">SAID IT</div>
+</div>
+<div style="flex:none;width:272px;height:272px;background:#E8B34B;border-radius:6px;padding:18px;box-sizing:border-box;display:flex;flex-direction:column">
+<span style="align-self:flex-start;font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.05em;padding:3px 7px;border-radius:3px;background:#33291F;color:#F6EEDD">HOW TO NOT STUFF THIS UP · Nº3 · NDIS</span>
+<div style="margin-top:14px;font:800 27px/1.1 'Baloo 2',sans-serif;color:#33291F">Plan review in six weeks?</div>
+<div style="margin-top:8px;font:400 13px/1.35 'Atkinson Hyperlegible',sans-serif;color:#5c4a33">Prep it like a pro. Seven slides. Save this one.</div>
+<div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between">
+<span style="font:700 10px 'Baloo 2',sans-serif;color:#33291F">the sandwich carer</span>
+<span style="font:800 20px 'Baloo 2',sans-serif;color:#33291F">→</span>
+</div>
+</div>
+<div style="flex:none;width:272px;height:272px;background:#3E8E7E;border-radius:6px;padding:18px;box-sizing:border-box;display:flex;flex-direction:column;position:relative;overflow:hidden">
+<span style="align-self:flex-start;font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.05em;padding:3px 7px;border-radius:3px;background:#F6EEDD;color:#33291F">DID YOU KNOW? · BOTH</span>
+<div style="margin-top:14px;font:800 23px/1.12 'Baloo 2',sans-serif;color:#F6EEDD">You can bring anyone you like to a planning meeting.</div>
+<div style="margin-top:8px;font:400 12px/1.4 'Atkinson Hyperlegible',sans-serif;color:#F6EEDD;opacity:.9">A mate counts. So does the neighbour who's good with forms.</div>
+<div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between">
+<span style="font:700 10px 'Baloo 2',sans-serif;color:#F6EEDD">the sandwich carer</span>
+<svg viewBox="0 0 300 244" width="60" height="49" style="display:block"><use href="#samCalm"></use></svg>
+</div>
+</div>
+<div style="flex:none;width:272px;height:272px;background:#F6EEDD;border-radius:6px;padding:18px;box-sizing:border-box;display:flex;flex-direction:column;position:relative;overflow:hidden">
+<span style="align-self:flex-start;font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.05em;padding:3px 7px;border-radius:3px;background:#D95B43;color:#fff">REAL TALK · BOTH</span>
+<div style="margin-top:14px;font:800 24px/1.12 'Baloo 2',sans-serif;color:#33291F">Nobody warns you the paperwork is the second job.</div>
+<div style="margin-top:8px;font:400 11.5px/1.4 'Atkinson Hyperlegible',sans-serif;color:#6b5d4d">Caption-led. The tile stays quiet so the caption can do the talking.</div>
+<div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between">
+<span style="font:700 10px 'Baloo 2',sans-serif;color:#33291F">the sandwich carer</span>
+<svg viewBox="0 0 300 244" width="60" height="49" style="display:block"><use href="#samOverIt"></use></svg>
+</div>
+</div>
+<div style="flex:none;width:158px;height:272px;background:#33291F;border-radius:6px;padding:14px;box-sizing:border-box;display:flex;flex-direction:column;position:relative;overflow:hidden">
+<span style="align-self:flex-start;font:700 8px 'IBM Plex Mono',monospace;letter-spacing:.05em;padding:3px 6px;border-radius:3px;background:#F6EEDD;color:#33291F">REEL · 9:16</span>
+<div style="margin-top:12px;font:800 16px/1.15 'Baloo 2',sans-serif;color:#F6EEDD">Squeezed flat this week?</div>
+<div style="margin-top:6px;font:400 9.5px/1.4 'Atkinson Hyperlegible',sans-serif;color:#F6EEDD;opacity:.85">Caring for two generations is a real load. You're allowed to say so.</div>
+<div style="margin-top:auto;display:flex;justify-content:center;animation:tscSquish 2.8s ease-in-out infinite;transform-origin:bottom">
+<svg viewBox="0 0 300 244" width="110" height="90" style="display:block"><use href="#samOverIt"></use></svg>
+</div>
+</div>
+<div style="flex:1;min-width:280px;background:#faf8f5;border:1px dashed rgba(51,41,31,.25);border-radius:6px;padding:18px 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:8px">
+<div style="font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#8f7f68">THE ANIMATION, IN PRACTICE</div>
+<div style="font:400 12px/1.5 'Atkinson Hyperlegible',sans-serif;color:#6b5d4d">Four reusable moves, not bespoke animation per post. Sam <strong style="color:#33291F">bobs</strong> on covers, <strong style="color:#33291F">side-eyes</strong> when jargon appears, <strong style="color:#33291F">squishes</strong> on hard-week posts, and the <strong style="color:#33291F">stamp slams</strong> on the payoff frame. The strikethrough draws itself across the jargon line.</div>
+<div style="font:400 12px/1.5 'Atkinson Hyperlegible',sans-serif;color:#6b5d4d">Because Sam is five flat layers, each move is a preset that drops onto any post in minutes, and AI video tools can extend them without redrawing him.</div>
+</div>
+</div>
+</div>
+
+<sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="Handoff note" style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:18px 24px;display:flex;flex-direction:column;gap:6px;font:400 12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.55)">
+<div><strong style="color:#333">What changed in v2.</strong> Sam redrawn as a bread slice (Susan's burger note), the 1c edge toolkit made explicit as four reusable moves, all five pillars from the brief shown, and the type specimen set at real sizes.</div>
+<div><strong style="color:#333">This is the sketch, not the final artwork.</strong> It becomes the brief for the web designer and creative: they redraw Sam as proper vector artwork with the mood set, profile crops and the four animation presets.</div>
+<div><strong style="color:#333">Sample copy only.</strong> Every line on the tiles is illustrative, written to show the format. None of it is a checked fact. Replace before anything ships.</div>
+<div><strong style="color:#333">Next:</strong> Canva template set per pillar at 1080×1080 and 1080×1920, Facebook and Instagram profile assets, then the recruitment brief for the person who runs it.</div>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"showNotes":{"editor":"boolean","default":true,"tsType":"boolean","section":"Presentation"}}'>
+class Component extends DCLogic {
+  state = { mood: 'calm', squeeze: 0, exploded: false, stamped: false };
+
+  constructor(props) {
+    super(props);
+    this.pupilL = React.createRef();
+    this.pupilR = React.createRef();
+    this.glintL = React.createRef();
+    this.glintR = React.createRef();
+  }
+
+  track(dx, dy) {
+    const set = (ref, x, y) => { if (ref.current) ref.current.style.transform = `translate(${x}px, ${y}px)`; };
+    set(this.pupilL, dx, dy); set(this.pupilR, dx, dy);
+    set(this.glintL, dx * 0.5, dy * 0.5); set(this.glintR, dx * 0.5, dy * 0.5);
+  }
+
+  onMove = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    const nx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
+    const ny = (e.clientY - (r.top + r.height * 0.38)) / (r.height / 2);
+    const clamp = (v) => Math.max(-1, Math.min(1, v));
+    this.track(clamp(nx) * 5, clamp(ny) * 4.5);
+  };
+
+  onLeave = () => this.track(0, 0);
+
+  fireStamp = () => {
+    this.setState({ stamped: true });
+    clearTimeout(this._st);
+    this._st = setTimeout(() => this.setState({ stamped: false }), 1600);
+  };
+
+  componentWillUnmount() { clearTimeout(this._st); clearTimeout(this._pk); }
+
+  poke = () => {
+    this.setState({ squeeze: 78 });
+    clearTimeout(this._pk);
+    this._pk = setTimeout(() => this.setState({ squeeze: 0 }), 420);
+  };
+
+  chip(active) {
+    return active ? 'background:#33291F;color:#F6EEDD' : 'background:#F6EEDD;color:#8f7f68';
+  }
+
+  renderVals() {
+    const { mood, squeeze, exploded, stamped } = this.state;
+    const sq = squeeze / 100;
+    const off = exploded ? 1 : 0;
+    const lyr = (d) => `transform:translateY(${d * off}px);transition:transform .45s cubic-bezier(.2,.8,.3,1)`;
+    const brow = (side) => {
+      const x = side === 'l' ? 120 : 180;
+      const r = mood === 'side' ? (side === 'l' ? -13 : -6) : mood === 'flat' ? (side === 'l' ? 9 : -9) : mood === 'talk' ? (side === 'l' ? -5 : 5) : 0;
+      const dy = mood === 'flat' ? 4 : mood === 'talk' ? -3 : 0;
+      return `rotate(${r} ${x} 64) translate(0 ${dy})`;
+    };
+    const m = (on, extra) => `opacity:${on ? 1 : 0};transition:opacity .18s ease${extra || ''}`;
+    return {
+      showNotes: this.props.showNotes ?? true,
+      pupilL: this.pupilL, pupilR: this.pupilR, glintL: this.glintL, glintR: this.glintR,
+      onMove: this.onMove, onLeave: this.onLeave, onPoke: this.poke,
+      onStamp: this.fireStamp,
+      onExplode: () => this.setState((s) => ({ exploded: !s.exploded })),
+      onReset: () => this.setState({ mood: 'calm', squeeze: 0, exploded: false, stamped: false }),
+      onSqueeze: (e) => this.setState({ squeeze: Number(e.target.value) }),
+      setCalm: () => this.setState({ mood: 'calm' }),
+      setSide: () => this.setState({ mood: 'side' }),
+      setFlat: () => this.setState({ mood: 'flat' }),
+      setTalk: () => this.setState({ mood: 'talk' }),
+      chipCalm: this.chip(mood === 'calm'), chipSide: this.chip(mood === 'side'),
+      chipFlat: this.chip(mood === 'flat'), chipTalk: this.chip(mood === 'talk'),
+      chipExplode: exploded ? 'background:#3E8E7E;color:#fff' : 'background:#F6EEDD;color:#33291F',
+      explodeLabel: exploded ? 'PUT HIM BACK' : 'SHOW THE LAYERS',
+      browLTf: brow('l'), browRTf: brow('r'),
+      squeeze,
+      squeezeLabel: squeeze === 0 ? 'holding up fine' : squeeze < 45 ? 'a bit of a week' : squeeze < 85 ? 'squeezed' : 'flattened',
+      squishStyle: `transform:scaleY(${(1 - sq * 0.42).toFixed(3)}) scaleX(${(1 + sq * 0.12).toFixed(3)});transform-origin:150px 213px;transition:transform .32s cubic-bezier(.3,1.4,.5,1)`,
+      shadowStyle: `transform:scaleX(${(1 + sq * 0.1).toFixed(3)});transform-origin:150px 226px;transition:transform .32s ease`,
+      layerTopStyle: lyr(-58), layerLettuceStyle: lyr(-24), layerTomatoStyle: lyr(-2),
+      layerCheeseStyle: lyr(22), layerBottomStyle: lyr(54),
+      layerLabelStyle: `opacity:${exploded ? 1 : 0}`,
+      captionStyle: `opacity:${exploded ? 0 : 1}`,
+      stampStyle: `opacity:${stamped ? 1 : 0};transform:rotate(-9deg) scale(${stamped ? 1 : 2.1})`,
+      mouthSmile: m(mood === 'calm'),
+      mouthFlat: m(mood === 'side'),
+      mouthWorried: m(mood === 'flat'),
+      mouthTalk: m(mood === 'talk', mood === 'talk' ? ';animation:samTalk .34s ease-in-out infinite;transform-origin:150px 108px' : '')
+    };
+  }
+}
+</script>
+</body>
+</html>

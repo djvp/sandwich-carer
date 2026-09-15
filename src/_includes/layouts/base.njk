@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site.name }}</title>
+<meta name="description" content="{{ site.description }}">
+<meta property="og:title" content="{{ site.name }}">
+<meta property="og:description" content="{{ site.tagline }}">
+<meta name="theme-color" content="#F6EEDD">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Baloo+2:wght@600;700;800&family=IBM+Plex+Mono:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+{{ content | safe }}
+<script>window.SITE_LINKS = {{ site.links | dump | safe }};</script>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>
