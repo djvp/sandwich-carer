@@ -199,3 +199,5 @@ p{margin:0}
   .jargon{background-size:100% 2px}
   .stamp{opacity:1;transform:rotate(-8deg)}
 }
+
+@media (max-width:400px){.brand b{font-size:16px}.brand{gap:8px}.nav-links{gap:4px}.nav-links .cta{padding:0 12px;font-size:13px}.preview-pill{padding:5px 7px}}
