@@ -1,0 +1,60 @@
+{# One post, drawn the way it looks on the feed. Expects `post` (a collection item). #}
+{%- set p = post.data -%}
+{%- set cat = categories[p.category] -%}
+<article class="post" data-topic="{{ p.category }}">
+  {% if p.type == "breakdown" %}
+  <div class="tile tile-breakdown">
+    <div class="t-top"><span class="t-eyebrow">What they just said</span>{% if p.issue %}<span class="t-issue">Nº{{ p.issue }}</span>{% endif %}</div>
+    <h3 class="t-head">{{ p.title }}</h3>
+    <p class="t-text">{{ p.subtitle }}</p>
+    <ul class="lights">
+      {% for l in p.lights %}<li class="light"><span class="tag light-{{ l.level }}">{{ l.level | upper }}</span><span>{{ l.text }}</span></li>{% endfor %}
+    </ul>
+    <div class="t-foot"><span class="wordmark">the sandwich carer</span><svg class="mini mini-calm" viewBox="0 0 300 244" aria-hidden="true"><use href="#samCalm"/></svg></div>
+  </div>
+  {% elif p.type == "translation" %}
+  <div class="tile tile-translation">
+    <span class="t-eyebrow">What they said</span>
+    <p class="t-jargon"><span class="jargon">{{ p.jargon }}</span></p>
+    <span class="t-label">What it means</span>
+    <h3 class="t-head">{{ p.meaning }}</h3>
+    <div class="t-foot"><span class="wordmark">the sandwich carer</span></div>
+    <svg class="mini mini-side peek" viewBox="0 0 300 244" aria-hidden="true"><use href="#samSide"/></svg>
+  </div>
+  {% elif p.type == "tip" %}
+  <div class="tile tile-tip">
+    <span class="t-eyebrow">Did you know?</span>
+    <h3 class="t-head">{{ p.headline }}</h3>
+    <p class="t-text">{{ p.text }}</p>
+    <div class="t-foot"><span class="wordmark">the sandwich carer</span><svg class="mini mini-calm" viewBox="0 0 300 244" aria-hidden="true"><use href="#samCalm"/></svg></div>
+  </div>
+  {% elif p.type == "hottake" %}
+  <div class="tile tile-hottake">
+    <span class="t-eyebrow">Hot take</span>
+    <h3 class="t-head t-quote">{{ p.quote }}</h3>
+    <div class="t-foot"><span class="wordmark wordmark-caps">The Sandwich Carer</span></div>
+    <span class="stamp stamp-tile" aria-hidden="true">SAID IT</span>
+  </div>
+  {% elif p.type == "howto" %}
+  <div class="tile tile-howto">
+    <span class="t-eyebrow">How to not stuff this up{% if p.issue %} · Nº{{ p.issue }}{% endif %}</span>
+    <h3 class="t-head">{{ p.headline }}</h3>
+    <p class="t-text">{{ p.text }}</p>
+    <div class="t-foot"><span class="wordmark">the sandwich carer</span><span class="t-arrow" aria-hidden="true">→</span></div>
+  </div>
+  {% elif p.type == "realtalk" %}
+  <div class="tile tile-realtalk">
+    <span class="t-eyebrow">Real talk</span>
+    <h3 class="t-head">{{ p.headline }}</h3>
+    <p class="t-text">{{ p.text }}</p>
+    <div class="t-foot"><span class="wordmark">the sandwich carer</span><svg class="mini mini-over" viewBox="0 0 300 244" aria-hidden="true"><use href="#samOverIt"/></svg></div>
+  </div>
+  {% endif %}
+  <footer class="post-meta">
+    <span class="tag {{ cat.tag }}">{{ cat.label | upper }}</span>
+    <span class="post-type">{{ postTypes[p.type] }}</span>
+    <time datetime="{{ post.date | isoDate }}">{{ post.date | postDate }}</time>
+    {% if p.sample %}<span class="tag tag-sample">SAMPLE</span>{% endif %}
+    <a class="view" href="{{ p.url or '#' }}"{% if p.url %} target="_blank" rel="noopener"{% else %} data-facade="this post on Instagram"{% endif %}>View post →</a>
+  </footer>
+</article>

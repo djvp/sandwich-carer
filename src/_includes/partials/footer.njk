@@ -1,0 +1,15 @@
+<footer class="footer">
+  <div class="wrap">
+    <a class="brand" href="/"><svg viewBox="0 0 300 244" aria-hidden="true"><use href="#samCalm"/></svg><b>the sandwich carer</b></a>
+    <ul>
+      <li><a href="/#posts">Posts</a></li>
+      <li><a href="/posts/">All posts</a></li>
+      <li><a href="/#guides">Guides</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="{{ site.links.facebook or '#' }}"{% if not site.links.facebook %} data-facade="the Facebook page"{% endif %}>Facebook</a></li>
+      <li><a href="{{ site.links.instagram or '#' }}"{% if not site.links.instagram %} data-facade="Instagram"{% endif %}>Instagram</a></li>
+    </ul>
+    <p class="help"><b>Need support right now?</b> Call Lifeline on <a href="tel:131114">13 11 14</a>, any time. In an emergency, call <a href="tel:000">000</a>.</p>
+    <p class="legal">© {{ site.year }} {{ site.name }}. An independent Australian publication. Not affiliated with the National Disability Insurance Agency, the Department of Health, Disability and Ageing, or any provider. Nothing here is legal, financial or medical advice. Sam the sandwich is ours; please don't put him on your brochure.</p>
+  </div>
+</footer>

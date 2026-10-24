@@ -1,0 +1,5 @@
+{
+  "disability": { "label": "Disability", "tag": "tag-disability", "color": "var(--lettuce)" },
+  "ageing": { "label": "Ageing", "tag": "tag-ageing", "color": "var(--tomato)" },
+  "mental-health": { "label": "Mental health", "tag": "tag-mental", "color": "var(--bread)" }
+}

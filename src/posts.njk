@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+title: All posts
+description: Every Sandwich Carer post on disability, ageing and mental health, sorted by topic.
+permalink: /posts/
+---
+<main class="archive">
+  <div class="wrap">
+    <header class="archive-head">
+      <a class="back" href="/">← Home</a>
+      <p class="eyebrow">The back catalogue</p>
+      <h1>Every post, by topic.</h1>
+      <p class="lede">Pick a topic, or scroll the lot. Each post opens on Facebook or Instagram, where you can save it and share it.</p>
+      <div class="filter" data-filter role="group" aria-label="Filter posts by topic">
+        <button type="button" class="chip" data-topic="all" aria-pressed="true">All <span class="count">{{ collections.postsNewest | length }}</span></button>
+        {% for key, c in categories %}<button type="button" class="chip" data-topic="{{ key }}" aria-pressed="false"><span class="dot" style="background:{{ c.color }}" aria-hidden="true"></span>{{ c.label }} <span class="count">{{ collections.postsNewest | byCategory(key) | length }}</span></button>{% endfor %}
+      </div>
+    </header>
+    <div class="post-grid post-grid-archive">
+      {% for post in collections.postsNewest %}{% include "partials/post-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</main>

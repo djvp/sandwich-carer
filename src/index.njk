@@ -1,4 +1,96 @@
 ---
 layout: layouts/base.njk
 ---
-{% include "partials/page.njk" %}
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Disability · Ageing · Mental health</p>
+      <h1>Plain English for the carer in the middle.</h1>
+      <p class="lede">The Sandwich Carer translates disability, ageing and mental health support for the people living it: participants, families, and the carers sandwiched between a complex system and the person they love. Independent, unaffiliated, occasionally funny.</p>
+      <div class="find">
+        <p class="eyebrow">What you'll find here</p>
+        <ul class="find-list">
+          {% for p in pillars %}<li><span class="swatch" style="background:{{ p.swatch }}" aria-hidden="true"></span><b>{{ p.name }}</b><span>{{ p.short }}</span></li>{% endfor %}
+        </ul>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-primary" href="/#posts">See the latest posts <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-secondary" href="/#guides">Shop the guides</a>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="stage-bg" aria-hidden="true"></div>
+      {% include "partials/sam-hero.njk" %}
+      <div class="card-translate play" id="heroCard">
+        <span class="stamp stamp-hero" aria-hidden="true">JARGON<br>REMOVED</span>
+        <p class="eyebrow">What they said</p>
+        <p class="hero-jargon"><span class="jargon">"Participants and nominees are encouraged to familiarise themselves with the relevant operational guidelines prior to reassessment."</span></p>
+        <p class="t-label">What it means</p>
+        <p class="t-meaning">Read up before your plan review. We'll show you which bits.</p>
+      </div>
+      <p class="tap-hint" aria-hidden="true">Tap Sam</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="posts">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Latest posts</p>
+        <h2>Fresh from the feed.</h2>
+      </div>
+      <div class="topics">
+        <span class="topics-label">Browse by topic</span>
+        {% for key, c in categories %}<a class="chip" href="/posts/?topic={{ key }}"><span class="dot" style="background:{{ c.color }}" aria-hidden="true"></span>{{ c.label }}</a>{% endfor %}
+      </div>
+    </div>
+    <div class="post-grid">
+      {% for post in collections.postsNewest | head(4) %}{% include "partials/post-card.njk" %}{% endfor %}
+    </div>
+    <div class="more">
+      <a class="btn btn-primary" href="/posts/">See all {{ collections.postsNewest | length }} posts <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <p>Every post goes up on Facebook and Instagram first. The back catalogue keeps them all in one place, sorted by topic.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="guides">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Guides &amp; templates</p>
+        <h2>Guides you can print, scribble on and take to the meeting.</h2>
+      </div>
+      <p class="note">Buy once, download, keep. No subscription, no account. Prices shown are placeholders until the store is live.</p>
+    </div>
+    <div class="guides">
+      {% for g in guides %}
+      {%- set cat = categories[g.category] -%}
+      {%- set buyUrl = g.url or site.links.shop -%}
+      <article class="guide">
+        <div class="cover" style="background:{{ cat.color }}"><svg viewBox="0 0 160 200" aria-hidden="true"><use href="#guideDoc"/></svg></div>
+        <div class="body">
+          <div class="guide-tags"><span class="tag {{ cat.tag }}">{{ cat.label | upper }}</span><span class="fmt">PDF</span></div>
+          <h3>{{ g.title }}</h3>
+          <p>{{ g.blurb }}</p>
+          <div class="buy">
+            <span class="price">{{ g.price }}{% if g.samplePrice %}<small>SAMPLE PRICE</small>{% endif %}</span>
+            <a class="btn btn-primary btn-sm" href="{{ buyUrl or '#' }}"{% if buyUrl %} target="_blank" rel="noopener"{% else %} data-facade="the Shopify store"{% endif %}>{{ g.cta }}</a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="indie" id="about">
+  <div class="wrap">
+    <div><h3>Independent.</h3><p>Written by a carer, not a provider. Nobody pays for a mention, and nobody gets to check the copy before it goes out.</p></div>
+    <div><h3>Unaffiliated.</h3><p>Not the NDIA, not an aged care provider, not a mental health service. We read what they publish and tell you what it means.</p></div>
+    <div><h3>Not advice.</h3><p>This is the plain-English version so you can ask better questions. It isn't legal, financial or medical advice, and it doesn't replace your planner, your GP or your lawyer.</p></div>
+  </div>
+</section>
+</main>
