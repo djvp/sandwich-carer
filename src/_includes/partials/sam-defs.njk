@@ -1,51 +1,11 @@
-{# Sam, v1 geometry from the core design: square-cut bread, face on the tomato,
-   fillings wider than the slices, cheese corner out. Static moods for small uses. #}
+{# Sam: "Sticker" redraw of the v1 core-design shape. Square-cut bread, face on the
+   tomato, fillings wider than the slices, one ink outline round every layer so he
+   holds at nav and favicon size. Static moods for small uses; sam-hero.njk animates. #}
 <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
 <defs>
-<g id="samBack">
-<path d="M52 78 V44 a14 14 0 0 1 14 -14 h168 a14 14 0 0 1 14 14 v34 z" fill="#D99F3A"/>
-<path d="M61 78 V50 a9 9 0 0 1 9 -9 h160 a9 9 0 0 1 9 9 v28 z" fill="#F0C265"/>
-<path d="M76 52 q20 -8 40 0" stroke="#E3B152" stroke-width="4" fill="none" stroke-linecap="round" opacity=".9"/>
-<rect x="46" y="78" width="208" height="58" rx="8" fill="#D95B43"/>
-<rect x="46" y="78" width="208" height="7" rx="3.5" fill="#E2705B"/>
-<ellipse cx="122" cy="100" rx="14.5" ry="15.5" fill="#FFF6EA"/>
-<ellipse cx="178" cy="100" rx="14.5" ry="15.5" fill="#FFF6EA"/>
-</g>
-<g id="samFront">
-<path d="M38 136 H262 v10 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 q-14 13 -28 1 q-14 -12 -28 1 q-14 12 -26 -1 z" fill="#3E8E7E"/>
-<path d="M38 136 H262 v5 H38 z" fill="#4CA189"/>
-<rect x="44" y="156" width="212" height="13" rx="3" fill="#F2C063"/>
-<rect x="248" y="153" width="19" height="19" rx="2.5" fill="#F2C063" transform="rotate(38 257 162)"/>
-<path d="M52 169 h196 v26 a14 14 0 0 1 -14 14 H66 a14 14 0 0 1 -14 -14 z" fill="#D99F3A"/>
-<path d="M61 169 h178 v22 a9 9 0 0 1 -9 9 H70 a9 9 0 0 1 -9 -9 z" fill="#F0C265"/>
-</g>
-<symbol id="samCalm" viewBox="0 0 300 244">
-<use href="#samBack"/>
-<rect x="110" y="79" width="24" height="5.5" rx="2.75" fill="#2A211A"/>
-<rect x="166" y="79" width="24" height="5.5" rx="2.75" fill="#2A211A"/>
-<circle cx="122" cy="102" r="6.8" fill="#2A211A"/><circle cx="178" cy="102" r="6.8" fill="#2A211A"/>
-<circle cx="126" cy="97" r="2.4" fill="#FFF6EA"/><circle cx="182" cy="97" r="2.4" fill="#FFF6EA"/>
-<path d="M136 120 q14 13 28 0" stroke="#2A211A" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-<use href="#samFront"/>
-</symbol>
-<symbol id="samSide" viewBox="0 0 300 244">
-<use href="#samBack"/>
-<rect x="110" y="79" width="24" height="5.5" rx="2.75" fill="#2A211A" transform="rotate(-13 122 82)"/>
-<rect x="166" y="79" width="24" height="5.5" rx="2.75" fill="#2A211A" transform="rotate(-6 178 82)"/>
-<circle cx="127" cy="104" r="6.8" fill="#2A211A"/><circle cx="183" cy="104" r="6.8" fill="#2A211A"/>
-<circle cx="129" cy="99" r="2.4" fill="#FFF6EA"/><circle cx="185" cy="99" r="2.4" fill="#FFF6EA"/>
-<path d="M137 123 h26" stroke="#2A211A" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-<use href="#samFront"/>
-</symbol>
-<symbol id="samOverIt" viewBox="0 0 300 244">
-<use href="#samBack"/>
-<rect x="110" y="83" width="24" height="5.5" rx="2.75" fill="#2A211A" transform="rotate(9 122 86)"/>
-<rect x="166" y="83" width="24" height="5.5" rx="2.75" fill="#2A211A" transform="rotate(-9 178 86)"/>
-<circle cx="122" cy="103" r="6.8" fill="#2A211A"/><circle cx="178" cy="103" r="6.8" fill="#2A211A"/>
-<circle cx="126" cy="98" r="2.4" fill="#FFF6EA"/><circle cx="182" cy="98" r="2.4" fill="#FFF6EA"/>
-<path d="M136 127 q14 -12 28 0" stroke="#2A211A" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-<use href="#samFront"/>
-</symbol>
+<symbol id="samCalm" viewBox="0 0 300 244"><g><path d="M56 171 H244 Q252 171 252 179 V198 Q252 210 240 210 H60 Q48 210 48 198 V179 Q48 171 56 171 Z" fill="#E8B34B" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/><path d="M64 186 H104" stroke="#F3CF86" stroke-width="5" stroke-linecap="round"/></g><g><path d="M42 154 H258 V171 H240 L233 189 L226 171 H42 Z" fill="#F7D47E" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/></g><g><path d="M36 138 H266 V152 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 Z" fill="#3E8E7E" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/></g><g><rect x="46" y="76" width="208" height="68" rx="12" fill="#D95B43" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/><rect x="110.0" y="89" width="24" height="5.5" rx="2.75" fill="#33291F" transform=""/><rect x="166.0" y="89" width="24" height="5.5" rx="2.75" fill="#33291F" transform=""/><ellipse cx="122" cy="111" rx="12.5" ry="13.5" fill="#FFF9EE" stroke="#33291F" stroke-width="4"/><circle cx="122" cy="112.5" r="6" fill="#33291F"/><circle cx="125.3" cy="108.3" r="2.0999999999999996" fill="#FFF9EE"/><ellipse cx="178" cy="111" rx="12.5" ry="13.5" fill="#FFF9EE" stroke="#33291F" stroke-width="4"/><circle cx="178" cy="112.5" r="6" fill="#33291F"/><circle cx="181.3" cy="108.3" r="2.0999999999999996" fill="#FFF9EE"/><path d="M137.0 129 q13.0 11.700000000000001 26 0" stroke="#33291F" stroke-width="5" fill="none" stroke-linecap="round"/></g><g><path d="M54 82 V52 Q54 30 76 30 H224 Q246 30 246 52 V82 Z" fill="#E8B34B" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/><path d="M72 47 H126" stroke="#F3CF86" stroke-width="5" stroke-linecap="round"/></g></symbol>
+<symbol id="samSide" viewBox="0 0 300 244"><g><path d="M56 171 H244 Q252 171 252 179 V198 Q252 210 240 210 H60 Q48 210 48 198 V179 Q48 171 56 171 Z" fill="#E8B34B" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/><path d="M64 186 H104" stroke="#F3CF86" stroke-width="5" stroke-linecap="round"/></g><g><path d="M42 154 H258 V171 H240 L233 189 L226 171 H42 Z" fill="#F7D47E" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/></g><g><path d="M36 138 H266 V152 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 Z" fill="#3E8E7E" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/></g><g><rect x="46" y="76" width="208" height="68" rx="12" fill="#D95B43" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/><rect x="110.0" y="89" width="24" height="5.5" rx="2.75" fill="#33291F" transform="rotate(-13 122 91.75)"/><rect x="166.0" y="89" width="24" height="5.5" rx="2.75" fill="#33291F" transform="rotate(-6 178 91.75)"/><ellipse cx="122" cy="111" rx="12.5" ry="13.5" fill="#FFF9EE" stroke="#33291F" stroke-width="4"/><circle cx="127" cy="114.5" r="6" fill="#33291F"/><circle cx="130.3" cy="110.3" r="2.0999999999999996" fill="#FFF9EE"/><ellipse cx="178" cy="111" rx="12.5" ry="13.5" fill="#FFF9EE" stroke="#33291F" stroke-width="4"/><circle cx="183" cy="114.5" r="6" fill="#33291F"/><circle cx="186.3" cy="110.3" r="2.0999999999999996" fill="#FFF9EE"/><path d="M138.0 132 h24" stroke="#33291F" stroke-width="5" fill="none" stroke-linecap="round"/></g><g><path d="M54 82 V52 Q54 30 76 30 H224 Q246 30 246 52 V82 Z" fill="#E8B34B" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/><path d="M72 47 H126" stroke="#F3CF86" stroke-width="5" stroke-linecap="round"/></g></symbol>
+<symbol id="samOverIt" viewBox="0 0 300 244"><g><path d="M56 171 H244 Q252 171 252 179 V198 Q252 210 240 210 H60 Q48 210 48 198 V179 Q48 171 56 171 Z" fill="#E8B34B" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/><path d="M64 186 H104" stroke="#F3CF86" stroke-width="5" stroke-linecap="round"/></g><g><path d="M42 154 H258 V171 H240 L233 189 L226 171 H42 Z" fill="#F7D47E" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/></g><g><path d="M36 138 H266 V152 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 q-14.38 13 -28.75 0 Z" fill="#3E8E7E" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/></g><g><rect x="46" y="76" width="208" height="68" rx="12" fill="#D95B43" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/><rect x="110.0" y="89" width="24" height="5.5" rx="2.75" fill="#33291F" transform="translate(0 4) rotate(9 122 91.75)"/><rect x="166.0" y="89" width="24" height="5.5" rx="2.75" fill="#33291F" transform="translate(0 4) rotate(-9 178 91.75)"/><ellipse cx="122" cy="111" rx="12.5" ry="13.5" fill="#FFF9EE" stroke="#33291F" stroke-width="4"/><circle cx="122" cy="114" r="6" fill="#33291F"/><circle cx="125.3" cy="109.8" r="2.0999999999999996" fill="#FFF9EE"/><ellipse cx="178" cy="111" rx="12.5" ry="13.5" fill="#FFF9EE" stroke="#33291F" stroke-width="4"/><circle cx="178" cy="114" r="6" fill="#33291F"/><circle cx="181.3" cy="109.8" r="2.0999999999999996" fill="#FFF9EE"/><path d="M137.0 136 q13.0 -10.530000000000001 26 0" stroke="#33291F" stroke-width="5" fill="none" stroke-linecap="round"/></g><g><path d="M54 82 V52 Q54 30 76 30 H224 Q246 30 246 52 V82 Z" fill="#E8B34B" stroke="#33291F" stroke-width="6" stroke-linejoin="round"/><path d="M72 47 H126" stroke="#F3CF86" stroke-width="5" stroke-linecap="round"/></g></symbol>
 <symbol id="guideDoc" viewBox="0 0 160 200">
 <rect x="18" y="14" width="124" height="172" rx="8" fill="#FDF8EE" stroke="#33291F" stroke-width="3"/>
 <rect x="10" y="22" width="124" height="172" rx="8" fill="#FDF8EE" stroke="#33291F" stroke-width="3"/>
