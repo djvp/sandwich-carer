@@ -32,26 +32,25 @@
   <div class="tile tile-hottake">
     <span class="t-eyebrow">Hot take</span>
     <h3 class="t-head t-quote">{{ p.quote }}</h3>
-    <div class="t-foot"><span class="wordmark wordmark-caps">The Sandwich Carer</span></div>
-    <span class="stamp stamp-tile" aria-hidden="true">SAID IT</span>
+    <div class="t-foot"><span class="wordmark wordmark-caps">The Sandwich Carer</span><svg class="mini mini-talk" viewBox="0 0 300 244" aria-hidden="true"><use href="#samTalk"/></svg></div>
   </div>
   {% elif p.type == "howto" %}
   <div class="tile tile-howto">
-    <span class="t-eyebrow">How to not stuff this up{% if p.issue %} · Nº{{ p.issue }}{% endif %}</span>
+    <span class="t-eyebrow">How not to stuff this up{% if p.issue %} · Nº{{ p.issue }}{% endif %}</span>
     <h3 class="t-head">{{ p.headline }}</h3>
     <p class="t-text">{{ p.text }}</p>
     <div class="t-foot"><span class="wordmark">the sandwich carer</span><span class="t-arrow" aria-hidden="true">→</span></div>
   </div>
   {% elif p.type == "realtalk" %}
   <div class="tile tile-realtalk">
-    <span class="t-eyebrow">Real talk</span>
+    <span class="t-eyebrow">Looking after you</span>
     <h3 class="t-head">{{ p.headline }}</h3>
     <p class="t-text">{{ p.text }}</p>
     <div class="t-foot"><span class="wordmark">the sandwich carer</span><svg class="mini mini-over" viewBox="0 0 300 244" aria-hidden="true"><use href="#samOverIt"/></svg></div>
   </div>
   {% endif %}
   <footer class="post-meta">
-    <span class="tag {{ cat.tag }}">{{ cat.label | upper }}</span>
+    <span class="topic"><span class="dot" style="background:{{ cat.color }}" aria-hidden="true"></span>{{ cat.label }}</span>
     <span class="post-type">{{ postTypes[p.type] }}</span>
     <time datetime="{{ post.date | isoDate }}">{{ post.date | postDate }}</time>
     {% if p.sample %}<span class="tag tag-sample">SAMPLE</span>{% endif %}

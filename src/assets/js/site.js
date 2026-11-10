@@ -10,6 +10,10 @@ function say(msg) {
   toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
 }
 document.addEventListener('click', (e) => {
+  if (e.target.closest('[data-preview]')) {
+    say("This is a preview: the buttons aren't connected yet. This badge comes off at launch.");
+    return;
+  }
   const a = e.target.closest('[data-facade]');
   if (!a) return;
   e.preventDefault();
@@ -117,11 +121,11 @@ if (sam && samBtn) {
   });
 }
 
-// Back catalogue: filter by topic, and honour ?topic= from the landing page chips.
+// Posts and guides pages: filter by topic, and honour ?topic= from the landing page chips.
 const filter = document.querySelector('[data-filter]');
 if (filter) {
   const chips = [...filter.querySelectorAll('[data-topic]')];
-  const cards = [...document.querySelectorAll('.post[data-topic]')];
+  const cards = [...document.querySelectorAll('[data-filter-items] > [data-topic]')];
   const apply = (topic) => {
     chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.topic === topic)));
     cards.forEach((p) => { p.hidden = topic !== 'all' && p.dataset.topic !== topic; });

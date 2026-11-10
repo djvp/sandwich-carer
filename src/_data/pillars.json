@@ -1,7 +1,7 @@
 [
-  { "name": "What they just said", "short": "policy changes, translated", "swatch": "var(--paper-2)" },
-  { "name": "How to not stuff this up", "short": "step by step through the big moments", "swatch": "var(--bread)" },
-  { "name": "Hot takes", "short": "an opinion, signed", "swatch": "var(--tomato)" },
-  { "name": "Did you know?", "short": "the tips most people miss", "swatch": "var(--lettuce)" },
-  { "name": "Real talk", "short": "caring, burnout, bureaucracy", "swatch": "var(--paper-3)" }
+  { "name": "What they just said", "short": "policy changes, translated" },
+  { "name": "How not to stuff this up", "short": "guides and templates for the big moments" },
+  { "name": "Hot takes", "short": "an honest opinion" },
+  { "name": "Did you know?", "short": "the tips most people miss" },
+  { "name": "Looking after you", "short": "self-care, burnout and bureaucracy" }
 ]

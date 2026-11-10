@@ -4,7 +4,7 @@ date: 2026-10-21
 category: disability
 type: breakdown
 issue: 14
-subtitle: The fortnightly update, in 90 seconds.
+subtitle: The latest, in 90 seconds.
 lights:
   - level: useful
     text: Core funds now flex between support types. No review needed.

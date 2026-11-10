@@ -16,7 +16,7 @@ permalink: /posts/
         {% for key, c in categories %}<button type="button" class="chip" data-topic="{{ key }}" aria-pressed="false"><span class="dot" style="background:{{ c.color }}" aria-hidden="true"></span>{{ c.label }} <span class="count">{{ collections.postsNewest | byCategory(key) | length }}</span></button>{% endfor %}
       </div>
     </header>
-    <div class="post-grid post-grid-archive">
+    <div class="post-grid post-grid-archive" data-filter-items>
       {% for post in collections.postsNewest %}{% include "partials/post-card.njk" %}{% endfor %}
     </div>
   </div>

@@ -2,6 +2,7 @@
   {
     "title": "Plan Review Prep Pack",
     "category": "disability",
+    "featured": true,
     "blurb": "Seven pages that get you from \"the letter came\" to walking in ready. Evidence checklist, the three questions planners actually ask, and a script for the hard bit.",
     "price": "A$19",
     "samplePrice": true,
@@ -11,6 +12,7 @@
   {
     "title": "My NDIS Goals Workbook",
     "category": "disability",
+    "featured": false,
     "blurb": "Goals written the way the system funds them, in words that are still yours. Worked examples for kids, adults and people who hate writing goals.",
     "price": "A$14",
     "samplePrice": true,
@@ -20,6 +22,7 @@
   {
     "title": "Support at Home: the first 90 days",
     "category": "ageing",
+    "featured": true,
     "blurb": "What happens after the assessment, who calls whom, and what you can push back on. For the adult child doing this from two suburbs away.",
     "price": "A$19",
     "samplePrice": true,
@@ -29,6 +32,7 @@
   {
     "title": "The GP appointment, scripted",
     "category": "mental-health",
+    "featured": true,
     "blurb": "A plain-English script for asking your GP for mental health support, for you or the person you care for. What to say, what to ask, and what happens next.",
     "price": "A$9",
     "samplePrice": true,

@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+title: All guides
+description: Every Sandwich Carer guide and template on disability, ageing and mental health, sorted by topic.
+permalink: /guides/
+---
+<main class="archive">
+  <div class="wrap">
+    <header class="archive-head">
+      <a class="back" href="/">← Home</a>
+      <p class="eyebrow">Guides &amp; templates</p>
+      <h1>Every guide, by topic.</h1>
+      <p class="lede">Fillable PDFs you can save, print and take to the meeting. Buy once, download, keep. No subscription, no account. Prices shown are placeholders until the store is live.</p>
+      <div class="filter" data-filter role="group" aria-label="Filter guides by topic">
+        <button type="button" class="chip" data-topic="all" aria-pressed="true">All <span class="count">{{ guides | length }}</span></button>
+        {% for key, c in categories %}<button type="button" class="chip" data-topic="{{ key }}" aria-pressed="false"><span class="dot" style="background:{{ c.color }}" aria-hidden="true"></span>{{ c.label }} <span class="count">{{ guides | inCategory(key) | length }}</span></button>{% endfor %}
+      </div>
+    </header>
+    <div class="guides" data-filter-items>
+      {% for g in guides %}{% include "partials/guide-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</main>
