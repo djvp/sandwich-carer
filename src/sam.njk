@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: Sam's moods
+description: The moods Sam comes in, and the name to use for each one on a post.
+permalink: /sam/
+noindex: true
+---
+{%- set rows = [
+  ["breakdown", "What they just said: an update"],
+  ["translation", "What they just said: a translation"],
+  ["howto", "How not to stuff this up"],
+  ["hottake", "Hot take"],
+  ["tip", "Did you know?"],
+  ["realtalk", "Looking after you"]
+] -%}
+<main class="archive">
+  <div class="wrap">
+    <header class="archive-head">
+      <a class="back" href="/">← Home</a>
+      <p class="eyebrow">Sam's moods</p>
+      <h1>Pick a Sam for every post.</h1>
+      <p class="lede">Add a <code>sam:</code> line to a post with one of the names below. Leave it out and the post gets the usual Sam for its type. Write <code>sam: none</code> to leave him off.</p>
+    </header>
+    <div class="moods">
+      {% for key, m in samMoods.moods %}
+      <figure class="mood">
+        <svg class="mood-sam anim-{{ m.anim }}" viewBox="0 0 300 244" aria-hidden="true"><use href="#{{ m.symbol }}"/></svg>
+        <figcaption>
+          <h2>{{ m.name }}</h2>
+          <code>sam: {{ key }}</code>
+          <p>{{ m.use }}</p>
+        </figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+    <section class="defaults">
+      <h2>The usual Sam for each post type</h2>
+      <table>
+        <thead><tr><th scope="col">Post type</th><th scope="col">Sam</th></tr></thead>
+        <tbody>
+          {% for r in rows %}{% set d = samMoods.moods[samMoods.defaults[r[0]]] %}<tr><td>{{ r[1] }}</td><td>{{ d.name if d else "No Sam, an arrow instead" }}</td></tr>{% endfor %}
+        </tbody>
+      </table>
+      <p class="note">These are working sketches. The designer's final artwork will keep the same names, so posts won't need changing.</p>
+    </section>
+  </div>
+</main>

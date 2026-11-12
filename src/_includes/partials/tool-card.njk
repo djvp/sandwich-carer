@@ -1,0 +1,15 @@
+{# One tool for sale (a guide, checklist, template or script). Expects `t` (an entry from src/_data/tools.json). #}
+{%- set cat = categories[t.category] -%}
+{%- set buyUrl = t.url or site.links.shop -%}
+<article class="guide" data-topic="{{ t.category }}">
+  <div class="cover" style="background:{{ cat.color }}"><svg viewBox="0 0 160 200" aria-hidden="true"><use href="#guideDoc"/></svg></div>
+  <div class="body">
+    <div class="guide-tags"><span class="topic"><span class="dot" style="background:{{ cat.color }}" aria-hidden="true"></span>{{ cat.label }}</span><span class="fmt">{{ toolTypes[t.type] }}</span></div>
+    <h3>{{ t.title }}</h3>
+    <p>{{ t.blurb }}</p>
+    <div class="buy">
+      <span class="price">{{ t.price }}{% if t.samplePrice %}<small>SAMPLE PRICE</small>{% endif %}</span>
+      <a class="btn btn-primary btn-sm" href="{{ buyUrl or '#' }}"{% if buyUrl %} target="_blank" rel="noopener"{% else %} data-facade="the store"{% endif %}>{{ t.cta }}</a>
+    </div>
+  </div>
+</article>

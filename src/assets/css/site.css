@@ -117,11 +117,15 @@ p{margin:0}
 .sam-hero.mood-over .brow-r{transform:translateY(4px) rotate(-9deg)}
 .sam-hero.mood-talk .brow-l{transform:translateY(-3px) rotate(-5deg)}
 .sam-hero.mood-talk .brow-r{transform:translateY(-3px) rotate(5deg)}
-.sam-hero .pupils{transform:translate(var(--cx),var(--cy));transition:transform .12s ease-out}
-.sam-hero .glint{transform:translate(calc(var(--cx) * -.5),calc(var(--cy) * -.5))}
+[data-sam-eyes] .pupils{transform:translate(var(--cx,0px),var(--cy,0px));transition:transform .12s ease-out}
+[data-sam-eyes] .glint{transform:translate(calc(var(--cx,0px) * -.5),calc(var(--cy,0px) * -.5))}
 .sam-hero.mood-side .pupils{transform:translate(5px,3.5px);transition-duration:.3s}
 .sam-hero.mood-side .glint{transform:translate(-2.5px,-1.75px)}
-.sam-hero .lid{animation:samLid 5.2s ease-in-out infinite}
+.lid{transform:translateY(-34px)}
+.sam-hero .lid,.brand-sam .lid{animation:samLid 5.2s ease-in-out infinite}
+.brand-sam .lid{animation-delay:-2.4s}
+.brand-sam .sam-bob{transform-origin:150px 220px;animation:samFloat 3.6s ease-in-out infinite}
+.brand:hover .brand-sam .sam-bob{animation-duration:1.6s}
 .sam-hero .mouth{opacity:0;transition:opacity .18s ease}
 .sam-hero.mood-calm .m-calm,.sam-hero.mood-side .m-side,.sam-hero.mood-over .m-over,.sam-hero.mood-talk .m-talk{opacity:1}
 .sam-hero.mood-talk .m-talk{transform-box:fill-box;transform-origin:center;animation:samTalk .34s ease-in-out infinite}
@@ -142,6 +146,8 @@ p{margin:0}
 @keyframes samLid{0%,93%,100%{transform:translateY(-34px)}95.5%,96.5%{transform:translateY(0)}}
 @keyframes samTalk{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1.25)}}
 @keyframes miniBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes bounce{0%,100%{transform:translateY(0) scale(1,1)}30%{transform:translateY(-6px) scale(.97,1.04)}55%{transform:translateY(0) scale(1.04,.95)}70%{transform:translateY(0) scale(1,1)}}
+@keyframes jolt{0%,70%,100%{transform:translate(0,0) scale(1)}74%{transform:translate(0,-5px) scale(1.04)}80%{transform:translate(0,0) scale(1)}86%{transform:translate(-1.5px,0)}90%{transform:translate(1.5px,0)}94%{transform:translate(0,0)}}
 @keyframes squish{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.84)}}
 @keyframes peek{0%,35%,100%{transform:rotate(-12deg) translateX(0)}45%,85%{transform:rotate(-12deg) translateX(5px)}}
 
@@ -172,9 +178,12 @@ p{margin:0}
 .wordmark-caps{font:700 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.85}
 .t-arrow{font:800 26px/1 var(--display)}
 .mini{display:block;width:clamp(58px,17cqi,92px);height:auto;flex:none;overflow:visible}
-.mini-calm{animation:miniBob 3.6s ease-in-out infinite}
-.mini-over{animation:squish 2.8s ease-in-out infinite;transform-origin:50% 100%}
-.mini-side.peek{position:absolute;right:-18px;bottom:-14px;width:clamp(100px,30cqi,150px);transform:rotate(-12deg);animation:peek 3.6s ease-in-out infinite}
+.anim-bob{animation:miniBob 3.6s ease-in-out infinite}
+.anim-chatter{animation:miniBob 1.6s ease-in-out infinite}
+.anim-bounce{animation:bounce 1.8s ease-in-out infinite;transform-origin:50% 100%}
+.anim-jolt{animation:jolt 3.2s ease-in-out infinite}
+.anim-squish{animation:squish 2.8s ease-in-out infinite;transform-origin:50% 100%}
+.mini.peek{position:absolute;right:-18px;bottom:-14px;width:clamp(100px,30cqi,150px);transform:rotate(-12deg);animation:peek 3.6s ease-in-out infinite}
 
 .tile-breakdown{background:var(--paper-2)}
 .lights{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:10px}
@@ -194,7 +203,6 @@ p{margin:0}
 .tile-hottake .t-eyebrow{color:rgba(246,238,221,.85)}
 .tile-hottake .t-quote{margin-block:auto;font-size:clamp(24px,7.4cqi,36px);line-height:1.12;padding-right:8%}
 .tile-hottake .t-foot{margin-top:0}
-.mini-talk{animation:miniBob 1.6s ease-in-out infinite}
 .tile-howto{background:var(--bread);color:var(--ink)}
 .tile-howto .t-eyebrow{color:#5c4a33}
 .tile-howto .t-text{color:#5c4a33;opacity:1}
@@ -247,6 +255,26 @@ p{margin:0}
 .archive h1{font-size:clamp(36px,5vw,56px);margin-top:10px}
 .archive .lede{margin-top:12px;max-width:60ch;color:var(--ink-2)}
 .filter{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+
+.archive-help{margin-top:28px;font-size:15px;color:var(--ink-2)}
+.archive-help a{font-weight:700}
+
+/* Sam's moods (/sam/) */
+.archive code{font:600 13px/1.2 var(--mono);background:var(--paper-3);color:var(--ink);padding:3px 7px;border-radius:5px}
+.moods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.moods{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.moods{grid-template-columns:1fr}}
+.mood{margin:0;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:16px}
+.mood-sam{display:block;width:min(100%,190px);height:auto;margin:6px auto 0;overflow:visible}
+.mood h2{font-size:24px}
+.mood code{display:inline-block;margin-top:8px}
+.mood p{margin-top:10px;font-size:15px;color:var(--ink-2);line-height:1.45}
+.defaults{margin-top:44px;max-width:640px}
+.defaults h2{font-size:26px}
+.defaults table{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
+.defaults th,.defaults td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+.defaults th{font:700 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.defaults .note{margin-top:14px;font-size:14px;color:var(--ink-3)}
 
 /* footer */
 .footer{padding-block:32px 40px}

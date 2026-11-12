@@ -26,7 +26,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("byCategory", (posts, key) =>
     posts.filter((p) => p.data.category === key)
   );
-  // Guides are plain data (src/_data/guides.json), not collection items.
+  // Tools are plain data (src/_data/tools.json), not collection items.
   eleventyConfig.addFilter("inCategory", (items, key) => items.filter((i) => i.category === key));
   eleventyConfig.addFilter("featured", (items) => items.filter((i) => i.featured));
   eleventyConfig.addFilter("postDate", (d) => shortDate.format(d));

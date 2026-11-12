@@ -37,8 +37,25 @@ if ('IntersectionObserver' in window) {
   posts.forEach((p) => p.classList.add('play'));
 }
 
-// Sam. Bobs and blinks on his own (CSS); eyes follow the cursor; side-eyes the
-// jargon, takes the stamp, then says the translation. Each tap shows another move.
+const clamp = (v) => Math.max(-1, Math.min(1, v));
+
+// Every live Sam (the header on every page, the hero on the home page) watches the cursor.
+const liveSams = [...document.querySelectorAll('[data-sam-eyes]')];
+if (liveSams.length && !reduceMotion) {
+  addEventListener('pointermove', (e) => {
+    liveSams.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      const reach = Math.max(r.width / 2, 200);
+      const nx = clamp((e.clientX - (r.left + r.width / 2)) / reach);
+      const ny = clamp((e.clientY - (r.top + r.height * 0.45)) / reach);
+      el.style.setProperty('--cx', `${(nx * 5.5).toFixed(2)}px`);
+      el.style.setProperty('--cy', `${(ny * 4.5).toFixed(2)}px`);
+    });
+  }, { passive: true });
+}
+
+// The hero Sam. Bobs and blinks on his own (CSS); side-eyes the jargon, takes the
+// stamp, then says the translation. Each tap shows another move.
 const sam = document.getElementById('heroSam');
 const samBtn = document.getElementById('samBtn');
 if (sam && samBtn) {
@@ -46,7 +63,6 @@ if (sam && samBtn) {
   const setMood = (m) => MOODS.forEach((x) => sam.classList.toggle(`mood-${x}`, x === m));
   const squishG = sam.querySelector('.sam-squish');
   const stamp = document.querySelector('.stamp-hero');
-  const clamp = (v) => Math.max(-1, Math.min(1, v));
 
   const poke = () => squishG.animate([
     { transform: 'scale(1, 1)' },
@@ -68,14 +84,6 @@ if (sam && samBtn) {
   const cancelAll = () => { timers.forEach(clearTimeout); timers.length = 0; };
 
   if (!reduceMotion) {
-    addEventListener('pointermove', (e) => {
-      const r = sam.getBoundingClientRect();
-      const nx = clamp((e.clientX - (r.left + r.width / 2)) / (r.width / 2));
-      const ny = clamp((e.clientY - (r.top + r.height * 0.42)) / (r.height / 2));
-      sam.style.setProperty('--cx', `${(nx * 5.5).toFixed(2)}px`);
-      sam.style.setProperty('--cy', `${(ny * 4.5).toFixed(2)}px`);
-    }, { passive: true });
-
     later(500, () => setMood('side'));    // jargon appears: side-eye
     later(1700, poke);                     // stamp lands: he takes the hit
     later(2100, () => setMood('talk'));   // says the translation

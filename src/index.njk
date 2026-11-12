@@ -16,7 +16,7 @@ layout: layouts/base.njk
       </div>
       <div class="ctas">
         <a class="btn btn-primary" href="/#posts">See the latest posts <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-secondary" href="/guides/">Shop the guides</a>
+        <a class="btn btn-secondary" href="/tools/">Shop the tools</a>
       </div>
     </div>
     <div class="stage">
@@ -56,21 +56,21 @@ layout: layouts/base.njk
   </div>
 </section>
 
-<section class="section" id="guides">
+<section class="section" id="tools">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <p class="eyebrow">Guides &amp; templates</p>
-        <h2>Guides you can fill in, print and take to the meeting.</h2>
+        <p class="eyebrow">Tools</p>
+        <h2>Tools you can fill in, print and take to the meeting.</h2>
       </div>
-      <p class="note">Buy once, download, keep. No subscription, no account. Prices shown are placeholders until the store is live.</p>
+      <p class="note">Guides, checklists, templates and scripts. Buy once, download, keep. No subscription, no account. Prices shown are placeholders until the store is live.</p>
     </div>
     <div class="guides guides-featured">
-      {% for g in guides | featured %}{% include "partials/guide-card.njk" %}{% endfor %}
+      {% for t in tools | featured %}{% include "partials/tool-card.njk" %}{% endfor %}
     </div>
     <div class="more">
-      <a class="btn btn-primary" href="/guides/">See all {{ guides | length }} guides <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <p>One page for every guide and template, sorted by topic.</p>
+      <a class="btn btn-primary" href="/tools/">See all {{ tools | length }} tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <p>One page for every tool, sorted by topic.</p>
     </div>
   </div>
 </section>

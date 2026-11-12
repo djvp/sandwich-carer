@@ -1,0 +1,20 @@
+{# The header Sam. Same drawing as samCalm, but with a live face: he bobs, blinks
+   and his eyes follow the cursor (site.js sets --cx/--cy on [data-sam-eyes]). #}
+<svg class="brand-sam" viewBox="0 0 300 244" data-sam-eyes aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="navEyeL"><ellipse cx="122" cy="111" rx="12.5" ry="13.5"/></clipPath>
+    <clipPath id="navEyeR"><ellipse cx="178" cy="111" rx="12.5" ry="13.5"/></clipPath>
+  </defs>
+  <g class="sam-bob">
+    <use href="#samBlank"/>
+    <rect x="110" y="89" width="24" height="5.5" rx="2.75" fill="#33291F"/>
+    <rect x="166" y="89" width="24" height="5.5" rx="2.75" fill="#33291F"/>
+    <ellipse cx="122" cy="111" rx="12.5" ry="13.5" fill="#FFF9EE"/>
+    <ellipse cx="178" cy="111" rx="12.5" ry="13.5" fill="#FFF9EE"/>
+    <g clip-path="url(#navEyeL)"><g class="pupils"><circle cx="122" cy="112.5" r="6" fill="#33291F"/><circle class="glint" cx="125.3" cy="108.3" r="2.1" fill="#FFF9EE"/></g><rect class="lid" x="108" y="97" width="28" height="28" fill="#D95B43"/></g>
+    <g clip-path="url(#navEyeR)"><g class="pupils"><circle cx="178" cy="112.5" r="6" fill="#33291F"/><circle class="glint" cx="181.3" cy="108.3" r="2.1" fill="#FFF9EE"/></g><rect class="lid" x="164" y="97" width="28" height="28" fill="#D95B43"/></g>
+    <ellipse cx="122" cy="111" rx="12.5" ry="13.5" fill="none" stroke="#33291F" stroke-width="4"/>
+    <ellipse cx="178" cy="111" rx="12.5" ry="13.5" fill="none" stroke="#33291F" stroke-width="4"/>
+    <path d="M137 129 q13 11.7 26 0" stroke="#33291F" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

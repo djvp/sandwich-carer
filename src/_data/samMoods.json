@@ -1,0 +1,18 @@
+{
+  "moods": {
+    "calm": { "symbol": "samCalm", "name": "Calm", "anim": "bob", "use": "The default. Tips, updates, anything steady." },
+    "chuffed": { "symbol": "samChuffed", "name": "Chuffed", "anim": "bounce", "use": "Good news, a win, something actually useful." },
+    "talking": { "symbol": "samTalk", "name": "Talking", "anim": "chatter", "use": "Hot takes, or Sam saying the plain-English version." },
+    "side-eye": { "symbol": "samSide", "name": "Side-eye", "anim": "bob", "use": "Jargon, a dodgy policy, a form that makes no sense. Never a person." },
+    "gobsmacked": { "symbol": "samGobsmacked", "name": "Gobsmacked", "anim": "jolt", "use": "The bit they buried. A surprise, good or bad." },
+    "over-it": { "symbol": "samOverIt", "name": "Over it", "anim": "squish", "use": "Hard weeks, burnout, bureaucracy." }
+  },
+  "defaults": {
+    "breakdown": "calm",
+    "translation": "side-eye",
+    "howto": "none",
+    "hottake": "talking",
+    "tip": "calm",
+    "realtalk": "over-it"
+  }
+}

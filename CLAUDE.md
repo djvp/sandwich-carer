@@ -1,7 +1,8 @@
 # The Sandwich Carer
 
-Website for The Sandwich Carer: plain-English posts, guides and templates on disability, ageing and
-mental health support, written for carers. Owner: Susan Campbell. Built by Diego (Clintel Systems).
+Website for The Sandwich Carer: plain-English posts and tools (guides, checklists, templates and
+scripts) on disability, ageing and mental health support, written for carers. Owner: Susan
+Campbell. Built by Diego (Clintel Systems).
 
 Eleventy static site. A push to `main` deploys to GitHub Pages in about a minute
 (`.github/workflows/deploy.yml`). Live: https://djvp.github.io/sandwich-carer/
@@ -14,15 +15,21 @@ Eleventy static site. A push to `main` deploys to GitHub Pages in about a minute
 
 ## Everyday jobs
 
-Field-by-field details for posts and guides are in `README.md`.
+Field-by-field details for posts and tools are in `README.md`.
 
 - **Add a post:** one front-matter-only file in `src/posts/`, named `YYYY-MM-DD-short-name.md`.
   `category` is `disability`, `ageing` or `mental-health`. Set `url` to the Facebook or Instagram
   post once it exists. The four newest posts show on the home page automatically.
-- **Add a guide:** one entry in `src/_data/guides.json`; `url` is the product's store link.
-  `featured: true` puts it on the home page; keep three featured, one per topic where possible.
+- **Pick Sam for a post:** add `sam:` with a mood name from `src/_data/samMoods.json` (calm, chuffed,
+  talking, side-eye, gobsmacked, over-it), or `none` to leave him off. Without it the post gets the
+  usual Sam for its type. The moods are shown at `/sam/`. Side-eye is for jargon and policies, never
+  for a post about a person.
+- **Add a tool:** one entry in `src/_data/tools.json`. `type` is `guide`, `checklist`, `template` or
+  `script`; `url` is the product's store link. `featured: true` puts it on the home page; keep three
+  featured, one per topic where possible.
 - **Edit the About text:** `src/_includes/content/about.md`, plain Markdown.
-- **Real links:** `src/_data/site.json`. Set `"preview": false` at launch to remove the Preview
+- **Real links:** `src/_data/site.json`, including `contact` (buyers' questions) and `links.tiktok`
+  (TikTok appears only once it's set). Set `"preview": false` at launch to remove the Preview
   badge, and `"sample": false` in `src/posts/posts.11tydata.json` once the posts are real.
 
 ## Before publishing
@@ -57,5 +64,5 @@ source so a reader can check it.
 
 ## Ask before changing
 
-The design (colours, fonts, layout, Sam's drawing), the three topics and the post type names were
-agreed with Susan. Don't change them as a side effect of another job.
+The design (colours, fonts, layout, Sam's drawing), the three topics, the post type names and the
+word "Tools" were agreed with Susan. Don't change them as a side effect of another job.
